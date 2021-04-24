@@ -6,13 +6,13 @@ import Destination from "../src/destination.js"
 import Trip from "../src/trip.js"
 import Traveler from "../src/traveler.js"
 
-let trip, destination, traveler
+let trip, traveler
 
 describe("Traveler", () => {
   beforeEach(() => {
-    destination = new Destination(destinationsData.destinations[0]);
-    trip = new Trip(tripsData.trips[0], destination);
-    traveler = new Traveler(travelersData.travelers[0])
+    // destination = new Destination(destinationsData.destinations[0]);
+    // trip = new Trip(tripsData.trips[0], destinationsData);
+    traveler = new Traveler(travelersData.travelers[0], tripsData, destinationsData)
   });
 
   it("should have an ID", () => expect(traveler.id).to.eql(1));
@@ -21,9 +21,8 @@ describe("Traveler", () => {
 
   it("should have a travelerType", () => expect(traveler.travelerType).to.eql("relaxer"));
 
-  it("should have an empty list of Trips by default", () => expect(traveler.trips).to.deep.eql([]));
+  it("should store a list of trips", () => {
+    expect(traveler.trips[1]).to.be.an.instanceOf(Trip)
+  })
 
-  it("can store a list of trips", () => {
-    expect(traveler.getTrips(tripsData)).to.deep.eql([]));
-  }
 })
