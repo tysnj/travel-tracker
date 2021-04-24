@@ -1,6 +1,8 @@
-export default class Trip {
+import Destination from './destination'
+
+export default class Trip extends Destination {
   constructor(id, userID, destinationID, travelers, date, duration, status, suggestedActivities) {
-    this.id = id;
+    super(id, destination, estimatedLodgingCostPerDay, estimatedFlightCostPerPerson, image, alt);
     this.userID = userId;
     this.destinationID = destinationID;
     this.travelers = travelers;

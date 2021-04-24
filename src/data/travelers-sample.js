@@ -1,4 +1,4 @@
-{
+let travelersData = {
   "travelers": [{
       "id": 1,
       "name": "Ham Leadbeater",
@@ -51,3 +51,5 @@
     }
   ]
 }
+
+export default travelersData;

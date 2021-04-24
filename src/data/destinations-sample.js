@@ -1,4 +1,4 @@
-{
+let destinationsData = {
   "destinations": [{
       "id": 1,
       "destination": "Lima, Peru",
@@ -160,3 +160,5 @@
     }
   ]
 }
+
+export default destinationsData;

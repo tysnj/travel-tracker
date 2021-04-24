@@ -1,4 +1,4 @@
-{
+let tripsData = {
   "trips": [{
       "id": 1,
       "userID": 4,
@@ -201,3 +201,5 @@
     }
   ]
 }
+
+export default tripsData;

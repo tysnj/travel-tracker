@@ -1,8 +1,6 @@
-import Trip from './trip
-
-export default class Destination extends Trip {
+export default class Destination {
   constructor(id, destination, estimatedLodgingCostPerDay,estimatedFlightCostPerPerson, image, alt) {
-    super(id);
+    this.id = id;
     this.destination = destination;
     this.estimatedLodgingCostPerDay = estimatedLodgingCostPerDay;
     this.estimatedFlightCostPerPerson = estimatedFlightCostPerPerson;
