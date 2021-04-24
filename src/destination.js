@@ -1,5 +1,5 @@
 export default class Destination {
-  constructor(id, destination, estimatedLodgingCostPerDay,estimatedFlightCostPerPerson, image, alt) {
+  constructor({id, destination, estimatedLodgingCostPerDay,estimatedFlightCostPerPerson, image, alt}) {
     this.id = id;
     this.destination = destination;
     this.estimatedLodgingCostPerDay = estimatedLodgingCostPerDay;
