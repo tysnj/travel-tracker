@@ -1,7 +1,190 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+/* *~~~~color palett~~~~*
+#BDC2BF silver sand
+#E3E7D3 beige
+#989C94 spanish gray
+#25291C pine tree
+#E6E49F green yellow crayola
+
+*/
+
+$primary-background: radial-gradient(circle, #E6E49F 10%, #BDC2BF 100%);
 ;
 
 body {
   background: $primary-background;
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+/*~~~~~~~~NAV BAR~~~~~~~~~*/
+.nav {
+  background-color: #989C94;
+  color: #25291C;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 20%;
+  height: 100%;
+  position: fixed;
+
+  &:hover {
+
+  }
+}
+
+.greeting {
+  border-top: solid 2px #E6E49F;
+  border-bottom: solid 2px #E6E49F;
+  display: flex;
+  color: #25291C;
+  flex-direction: column;
+  align-items: center;
+  height: 10em;
+  font-weight: Light;
+  color: #25291C;
+  // margin-left: 6%;
+  // margin-top: 6%;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.nav>h1 {
+  color: #25291C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-top: 6%;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.nav-link {
+  background-color: #25291C;
+  color: #E6E49F;
+  width: 85%;
+  margin-top: 6%;
+  margin-left: 6%;
+  padding: 2% 2% 2%;
+  font-size: 116%;
+  font-weight: bold;
+  border-color: #989C94;
+  border: solid 3px #25291C;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.travelers-link {
+  display: none;
+}
+
+.book-link {
+  display: flex;
+}
+
+/*~~~~~~INPUT BOX~~~~~~~~~*/
+.main-section {
+  background-color: #25291C;
+  // height: 27em;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.form {
+  background-color: #25291C;
+  height: 27em;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.form-label {
+  font-size: 17px;
+  margin-right: 38%;
+  color: #E3E7D3;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-bottom: .3%;
+  /* margin-bottom: .2%; */
+}
+
+.form-input {
+  width: 41%;
+  height: 2em;
+  // border: solid 3px #25291C;
+  color: #BDC2BF;
+  border-radius: 5px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.book-button {
+  width: 41%;
+  height: 9em;
+  font-size: 18pt;
+  color: white;
+  font-weight: bold;
+  margin-top: 1.5%;
+  // border: solid 3px #BDC2BF;
+  border-radius: 5px;
+  outline: none;
+  // background-color: #BDC2BF;
+  cursor: pointer;
+}
+
+#saveButton:disabled {
+  // background-color: #BDC2BF;
+  cursor: auto;
+}
+
+.search-bar {
+  display: flex;
+  width: 41%;
+  height: 3em;
+  margin-top: 1.5%;
+  margin-bottom: 2%;
+  // border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  width: 6%;
+  height: auto;
+  vertical-align: middle;
+  padding-left: 2%;
+  // background-color: #353667;
+  padding-right: 3%;
+}
+
+.search {
+  width: 90%;
+  height: 88%;
+  outline: none;
+  font-size: 15px;
+  // color: #1F1F3D;
+}
+
+
+
+.trips-display {
+  background-color: #25291C;
+}
+
+.hidden {
+  display: none !important;
 }
