@@ -7,6 +7,8 @@ export default class Traveler {
     this.travelerType = travelerType;
     this.trips = [];
     this.getTrips(trips, destinations);
+    this.totalSpentThisYear = 0;
+    this.getTotalSpent()
   }
 
   getTrips(tripData, destData) {
@@ -16,5 +18,16 @@ export default class Traveler {
       this.trips.push(trip)
     })
     return travelerTrips
+  }
+
+  getTotalSpent() {
+    return this.trips.reduce((total, trip) => {
+      let costPerTrip = (trip.destination.estimatedLodgingCostPerDay * trip.duration)
+      + (trip.destination.estimatedFlightCostPerPerson * trip.travelers);
+      let agentFee = .1 * costPerTrip
+      total += (costPerTrip + agentFee)
+      return total
+    }, 0)
+    // + this.trips.length
   }
 }

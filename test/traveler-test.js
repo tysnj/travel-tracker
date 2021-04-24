@@ -20,4 +20,5 @@ describe("Traveler", () => {
 
   it("should store a list of trips", () => expect(traveler.trips[1]).to.be.an.instanceOf(Trip));
 
+  it("should store total spent on trips this year", () => expect(traveler.totalSpentThisYear).to.eql(0));
 })
