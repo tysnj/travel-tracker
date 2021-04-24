@@ -21,13 +21,18 @@ export default class Traveler {
   }
 
   getTotalSpent() {
-    return this.trips.reduce((total, trip) => {
-      let costPerTrip = (trip.destination.estimatedLodgingCostPerDay * trip.duration)
-      + (trip.destination.estimatedFlightCostPerPerson * trip.travelers);
+    this.totalSpentThisYear = this.trips.reduce((total, trip) => {
+      let lodgingCost = (trip.destination.estimatedLodgingCostPerDay * trip.duration) * trip.travelers;
+      let flightCost = (trip.destination.estimatedFlightCostPerPerson * trip.travelers);
+      let costPerTrip = lodgingCost + flightCost;
       let agentFee = .1 * costPerTrip
       total += (costPerTrip + agentFee)
       return total
     }, 0)
-    // + this.trips.length
+  }
+
+  bookNewTrip(tripInfo, destinations) {
+    let trip = new Trip(tripInfo, destinations);
+    this.trips.push(trip);
   }
 }

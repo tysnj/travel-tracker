@@ -20,5 +20,12 @@ describe("Traveler", () => {
 
   it("should store a list of trips", () => expect(traveler.trips[1]).to.be.an.instanceOf(Trip));
 
-  it("should store total spent on trips this year", () => expect(traveler.totalSpentThisYear).to.eql(0));
+  it("should store total spent on trips this year", () => expect(traveler.totalSpentThisYear).to.eql(6919));
+
+  it("should be able to book a new trip", () => {
+    let tripInfo = {id: 20, userID: 1, destinationID: 1, travelers: 1, date: "2020/12/06", duration: 2}
+    traveler.bookNewTrip(tripInfo, destinationsData);
+    expect(traveler.trips.length).to.eql(3);
+  });
+
 })

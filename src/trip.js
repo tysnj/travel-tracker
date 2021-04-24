@@ -1,7 +1,7 @@
 import Destination from "../src/destination.js"
 
 export default class Trip {
-  constructor({id, userID, destinationID, travelers, date, duration, status, suggestedActivities = []}, destinations) {
+  constructor({id, userID, destinationID, travelers, date, duration, status = "pending", suggestedActivities = []}, destinations) {
     this.id = id;
     this.userID = userID;
     this.destinationID = destinationID;

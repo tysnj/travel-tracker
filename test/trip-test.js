@@ -23,10 +23,23 @@ describe("Trip", () => {
 
   it("should have a duration", () => expect(trip.duration).to.eql(8));
 
+  it("should have a default status of pending", () => {
+    let newTrip = new Trip(
+      {
+        "id": 20,
+        "userID": 1,
+        "destinationID": 1,
+        "travelers": 1,
+        "date": "2020/12/06",
+        "duration": 2
+      }, destinationsData)
+    expect(newTrip.status).to.eql("pending");
+
+  });
+
   it("should have a status of approved or pending", () => {
     let newTrip = new Trip(tripsData.trips[1], destinationsData);
     expect(trip.status).to.eql("approved");
-    expect(newTrip.status).to.eql("pending");
   });
 
   it("should store an empty list of suggestedActivities by default", () => expect(trip.suggestedActivities).to.deep.eql([]));
