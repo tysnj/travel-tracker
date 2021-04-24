@@ -1,5 +1,14 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+/* *~~~~color palett~~~~*
+#BDC2BF silver sand
+#E3E7D3 beige
+#989C94 spanish gray
+#25291C pine tree
+#E6E49F green yellow crayola
+
+*/
+
+$primary-background: radial-gradient(circle, #E6E49F 10%, #BDC2BF 100%);
 ;
 
 body {
@@ -12,60 +21,87 @@ body {
   font-family: "Open Sans";
 }
 
-
 /*~~~~~~~~NAV BAR~~~~~~~~~*/
-.side-bar {
-  background-color: #1F1F3D;
-  color: #E9E9F3;
+.nav {
+  background-color: #989C94;
+  color: #25291C;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   width: 20%;
   height: 100%;
   position: fixed;
+
+  &:hover {
+
+  }
 }
 
-.side-bar>h1 {
-  margin: 6%;
-}
-
-.filter {
-  border-top: solid 2px #353567;
-  border-bottom: solid 2px #353567;
+.greeting {
+  border-top: solid 2px #E6E49F;
+  border-bottom: solid 2px #E6E49F;
   display: flex;
+  color: #25291C;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   height: 10em;
   font-weight: Light;
-}
-
-.filter>h2 {
-  color: #BFBFDD;
-  margin-left: 6%;
-  margin-top: 6%;
+  color: #25291C;
+  // margin-left: 6%;
+  // margin-top: 6%;
   font-size: 15pt;
   font-weight: bold;
 }
 
-.show-starred-ideas {
-  background-color: #5356A4;
-  color: #E9E9F3;
+.nav>h1 {
+  color: #25291C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-top: 6%;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.nav-link {
+  background-color: #25291C;
+  color: #E6E49F;
   width: 85%;
   margin-top: 6%;
   margin-left: 6%;
   padding: 2% 2% 2%;
   font-size: 116%;
   font-weight: bold;
-  border-color: #2D2C55;
-  border: solid 3px #7375B5;
+  border-color: #989C94;
+  border: solid 3px #25291C;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.travelers-link {
+  display: none;
+}
+
+.book-link {
+  display: flex;
 }
 
 /*~~~~~~INPUT BOX~~~~~~~~~*/
+.main-section {
+  background-color: #25291C;
+  // height: 27em;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
 .form {
-  background-color: #A9AAD2;
+  background-color: #25291C;
   height: 27em;
   margin-left: 20%;
   display: flex;
@@ -74,63 +110,43 @@ body {
   justify-content: center
 }
 
-.user-title-label {
+.form-label {
   font-size: 17px;
   margin-right: 38%;
-  color: #353667;
+  color: #E3E7D3;
   font-weight: bold;
   margin-top: 2%;
   margin-bottom: .3%;
   /* margin-bottom: .2%; */
 }
 
-.user-title {
+.form-input {
   width: 41%;
   height: 2em;
-  // border: solid 3px #7375B5;
-  color: #1F1F3D;
+  // border: solid 3px #25291C;
+  color: #BDC2BF;
   border-radius: 5px;
   outline: none;
   font-size: 15px;
   box-sizing: border-box;
 }
 
-.user-comment-label {
-  font-size: 17px;
-  margin-right: 38%;
-  // color: #353667;
-  font-weight: bold;
-  margin-top: 1.5%;
-  margin-bottom: .3%;
-}
-
-.user-comment {
-  width: 41%;
-  height: 97%;
-  // border: solid 3px #7375B5;
-  color: #1F1F3D;
-  border-radius: 5px;
-  outline: none;
-  font-size: 10px;
-  box-sizing: border-box;
-}
-
-.save-button {
+.book-button {
   width: 41%;
   height: 9em;
   font-size: 18pt;
   color: white;
   font-weight: bold;
   margin-top: 1.5%;
-  // border: solid 3px #7375B5;
+  // border: solid 3px #BDC2BF;
   border-radius: 5px;
   outline: none;
-  // background-color: #353667;
+  // background-color: #BDC2BF;
   cursor: pointer;
 }
 
 #saveButton:disabled {
-  // background-color: #5356A4;
+  // background-color: #BDC2BF;
   cursor: auto;
 }
 
@@ -163,6 +179,11 @@ body {
   // color: #1F1F3D;
 }
 
+
+
+.trips-display {
+  background-color: #25291C;
+}
 
 .hidden {
   display: none !important;
