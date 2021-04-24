@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset = "UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap' rel='stylesheet'>
+  <title>Travel Tracker</title>
+</head>
+<body>
+  <nav class="nav">
+    <h1>TravelTracker</h1>
+    <p class="greeting">Hello User</p>
+    <a href="/trips" class="nav-link" data-link>Trips</a>
+    <a href="/book" class="nav-link" data-link>Book</a>
+    <a href="/travelers" class="nav-link" data-link hidden>Travelers</a>
+  </nav>
+  <main>
+    <form class="form">
+      <label class="date-picker-label">Date</label>
+      <input class="date-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
+      <label class="duration-label">Duration</label>
+      <input class="duration-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
+      <label class="travelers-label"># of Travelers</label>
+      <input class="travelers-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
+      <label class="destination-label">Destination</label>
+      <select name="destination "class="destination-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
+        <option value="Zion">Moab</option>
+        <option value="Joshua Tree">Joshua Tree</option>
+        <option value="Arches">Arches</option>
+        <option value="Canyon Lands">Canyon Lands</option>
+      </select>
+      <button class="save-button" id="saveButton" disabled>Book</button>
+      <span class="search-bar" hidden>
+        <img class="search-icon" src="assets/search.svg" alt="search">
+        <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
+      </span>
+    </form>
+    <section class="trips-display" id=tripsDisplay>
+    </section>
+    <section class="travelers-display" id=travelersDisplay hidden>
+    </section>
+  </main>
+</body>
+</html>
