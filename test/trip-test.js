@@ -36,9 +36,6 @@ describe("Trip", () => {
     expect(newTrip.suggestedActivities).to.deep.eql(["para snorkling", "scuba flying", "lay down paddle boarding"]);
   });
 
-  it("should keep an instance of its destination", () => {
-    trip.getDestination(destinationsData)
-    expect(trip.destination).to.be.an.instanceOf(Destination)
-  });
+  it("should keep an instance of its destination", () => expect(trip.destination).to.be.an.instanceOf(Destination));
 
 })

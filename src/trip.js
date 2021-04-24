@@ -10,8 +10,7 @@ export default class Trip {
     this.duration = duration;
     this.status = status;
     this.suggestedActivities = suggestedActivities;
-    this.destination;
-    this.getDestination(destinations)
+    this.destination = this.getDestination(destinations);
   }
 
   getDestination(destData) {
