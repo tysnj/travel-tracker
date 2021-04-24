@@ -1,14 +1,15 @@
-import Destination from './destination'
+import Destination from "../src/destination.js"
 
-export default class Trip extends Destination {
-  constructor(id, userID, destinationID, travelers, date, duration, status, suggestedActivities) {
-    super(id, destination, estimatedLodgingCostPerDay, estimatedFlightCostPerPerson, image, alt);
-    this.userID = userId;
+export default class Trip {
+  constructor({id, userID, destinationID, travelers, date, duration, status, suggestedActivities = []}, destination) {
+    this.id = id;
+    this.userID = userID;
     this.destinationID = destinationID;
     this.travelers = travelers;
     this.date = date;
     this.duration = duration;
     this.status = status;
-    this.suggestedActivities = [];
+    this.suggestedActivities = suggestedActivities;
+    this.destination = destination;
   }
 }

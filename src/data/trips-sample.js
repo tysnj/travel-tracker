@@ -2,7 +2,7 @@ let tripsData = {
   "trips": [{
       "id": 1,
       "userID": 4,
-      "destinationID": 9,
+      "destinationID": 1,
       "travelers": 1,
       "date": "2019/09/16",
       "duration": 8,
@@ -17,7 +17,7 @@ let tripsData = {
       "date": "2020/10/04",
       "duration": 18,
       "status": "pending",
-      "suggestedActivities": []
+      "suggestedActivities": ["para snorkling", "scuba flying", "lay down paddle boarding"]
     },
     {
       "id": 3,
