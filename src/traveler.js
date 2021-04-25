@@ -24,7 +24,7 @@ export default class Traveler {
   getTotalSpentThisYear() {
     let oneYearAgo = dayjs().subtract(1, "year").format("YYYY/MM/DD")
     this.totalSpentThisYear = this.trips.reduce((total, trip) => {
-      if (trip.date > oneYearAgo){
+      if (trip.startDate > oneYearAgo){
       total += trip.estCost
     }
       return total

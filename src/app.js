@@ -28,11 +28,11 @@ export default class App {
 
   validateCredentials(userName, password) {
     if(userName.split("traveler")[0] === "" && password === "travel2020"){
-      this.view = "traveler"
-      return true
+      return this.view = "traveler"
+      // return true
     } else if (userName === "agency" && password === "travel2020") {
-      this.view = "agency"
-      return true
+      return this.view = "agency"
+      // return true
     } else {
       return false
     }

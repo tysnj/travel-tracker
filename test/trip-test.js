@@ -19,7 +19,7 @@ describe("Trip", () => {
 
   it("should have an number of travelers", () => expect(trip.travelers).to.eql(1));
 
-  it("should have date", () => expect(trip.date).to.eql("2019/09/16"));
+  it("should have date", () => expect(trip.startDate).to.eql("2019/09/16"));
 
   it("should have a duration", () => expect(trip.duration).to.eql(8));
 
@@ -47,6 +47,10 @@ describe("Trip", () => {
   it("should store suggestedActivities", () => {
     let newTrip = new Trip(tripsData.trips[1], destinationsData);
     expect(newTrip.suggestedActivities).to.deep.eql(["para snorkling", "scuba flying", "lay down paddle boarding"]);
+  });
+
+  it("should store the end date", () => {
+    expect(trip.endDate).to.eql("2019/09/24")
   });
 
   it("should keep an instance of its destination", () => expect(trip.destination).to.be.an.instanceOf(Destination));
