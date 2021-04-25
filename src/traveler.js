@@ -1,4 +1,5 @@
 import Trip from "../src/trip.js"
+import dayjs from 'dayjs'
 
 export default class Traveler {
   constructor({id, name, travelerType}, trips, destinations) {
@@ -8,7 +9,7 @@ export default class Traveler {
     this.trips = [];
     this.getTrips(trips, destinations);
     this.totalSpentThisYear = 0;
-    this.getTotalSpent()
+    this.getTotalSpentThisYear()
   }
 
   getTrips(tripData, destData) {
@@ -20,9 +21,12 @@ export default class Traveler {
     return travelerTrips
   }
 
-  getTotalSpent() {
+  getTotalSpentThisYear() {
+    let oneYearAgo = dayjs().subtract(1, "year").format("YYYY/MM/DD")
     this.totalSpentThisYear = this.trips.reduce((total, trip) => {
+      if (trip.date > oneYearAgo){
       total += trip.estCost
+    }
       return total
     }, 0)
   }
