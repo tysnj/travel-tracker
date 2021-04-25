@@ -14,6 +14,7 @@ export default class Traveler {
 
   getTrips(tripData, destData) {
     let travelerTrips = tripData.trips.filter(trip => trip.userID === this.id)
+    .sort((a, b) => dayjs(b.date) - dayjs(a.date))
     .forEach(instance => {
       let trip = new Trip(instance, destData)
       this.trips.push(trip)

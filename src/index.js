@@ -33,5 +33,4 @@ let un = "traveler09";
 let pw = "travel2020";
 const fakeLogin = (un, pw) => app.login(un, pw)
 fakeLogin(un,pw)
-console.log(app)
 domUpdates.populateTrips(app.user.trips)
