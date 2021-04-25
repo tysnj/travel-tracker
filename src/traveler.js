@@ -22,11 +22,7 @@ export default class Traveler {
 
   getTotalSpent() {
     this.totalSpentThisYear = this.trips.reduce((total, trip) => {
-      let lodgingCost = (trip.destination.estimatedLodgingCostPerDay * trip.duration) * trip.travelers;
-      let flightCost = (trip.destination.estimatedFlightCostPerPerson * trip.travelers);
-      let costPerTrip = lodgingCost + flightCost;
-      let agentFee = .1 * costPerTrip
-      total += (costPerTrip + agentFee)
+      total += trip.estCost
       return total
     }, 0)
   }

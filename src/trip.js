@@ -11,6 +11,8 @@ export default class Trip {
     this.status = status;
     this.suggestedActivities = suggestedActivities;
     this.destination = this.getDestination(destinations);
+    this.estCost = 0;
+    this.getEstCost();
   }
 
   getDestination(destData) {
@@ -18,5 +20,13 @@ export default class Trip {
     let destination = new Destination(findDest)
     this.destination = destination
     return this.destination
+  }
+
+  getEstCost() {
+    let lodgingCost = (this.destination.estimatedLodgingCostPerDay * this.duration) * this.travelers;
+    let flightCost = (this.destination.estimatedFlightCostPerPerson * this.travelers);
+    let costPerTrip = lodgingCost + flightCost;
+    let agentFee = .1 * costPerTrip
+    this.estCost = (costPerTrip + agentFee)
   }
 }

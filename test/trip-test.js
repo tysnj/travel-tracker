@@ -51,4 +51,5 @@ describe("Trip", () => {
 
   it("should keep an instance of its destination", () => expect(trip.destination).to.be.an.instanceOf(Destination));
 
+  it("should store estimated cost of the trip", () => expect(trip.estCost).to.eql(1056))
 })
