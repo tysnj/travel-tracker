@@ -17,22 +17,25 @@ body {
   margin: 0;
   font-family: "Open Sans";
   height: 100vh;
+  display: flex;
 }
 
 * {
   font-family: "Open Sans";
 }
 
-/*~~~~~~~~NAV BAR~~~~~~~~~*/
-.nav {
+/*~~~~~~~~NAV BARS~~~~~~~~~*/
+.aside {
   background-color: #989C94;
   color: #25291C;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+  align-items: center;
   width: 20%;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
+  // position: fixed;
+  margin-top: auto;
 
   &:hover {
 
@@ -46,33 +49,42 @@ body {
   color: #25291C;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 10em;
   font-weight: Light;
   color: #25291C;
-  // margin-left: 6%;
-  // margin-top: 6%;
   font-size: 15pt;
   font-weight: bold;
+  width: 100%;
 }
 
-.nav>h1 {
+.aside>h1 {
   color: #25291C;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-top: 6%;
   font-size: 15pt;
   font-weight: bold;
 }
 
-.nav-link {
+
+.logo {
+  font-size: 100%;
+  font-weight: bold;
+  height: 5em;
+}
+
+.page-links{
+  width: 100%;
+}
+.aside-link {
   background-color: #25291C;
   color: #E6E49F;
   width: 85%;
   margin-top: 6%;
   margin-left: 6%;
   padding: 2% 2% 2%;
-  font-size: 116%;
+  // font-size: 116%;
   font-weight: bold;
   border-color: #989C94;
   border: solid 3px #25291C;
@@ -93,14 +105,7 @@ body {
 }
 
 /*~~~~~~INPUT BOX~~~~~~~~~*/
-.main-section {
-  background-color: #25291C;
-  // height: 27em;
-  margin-left: 20%;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-}
+
 
 .form {
   background-color: #25291C;
@@ -191,6 +196,23 @@ body {
   height: 100%;
  }
 
+
+ .main-section {
+   background-color: #25291C;
+   height: 100vh;
+   // margin-left: 20%;
+   display: flex;
+   flex-direction: column;
+   align-content: flex-end;
+ }
+
+ .nav {
+   height: 6em;
+   background-color: #989C94;
+   border-bottom: solid 2px #E6E49F;
+   display: flex;
+   justify-content: flex-end;
+ }
 
 .trips-display {
   background-color: #E1E0A4;

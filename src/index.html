@@ -7,14 +7,28 @@
   <title>Travel Tracker</title>
 </head>
 <body>
-  <nav class="nav">
-    <h1>TravelTracker</h1>
-    <p class="greeting">Hello User</p>
-    <a href="/trips" class="nav-link" data-link>Trips</a>
-    <a href="/book" class="nav-link book-link" data-link>Book</a>
-    <a href="/travelers" class="nav-link travelers-link" data-link>Travelers</a>
-  </nav>
+  <aside class="aside">
+    <div class="logo">
+      <h1 class="logo-text">TravelTracker</h1>
+    </div>
+    <div class="greeting">
+      <p class="greeting-text">Hello User</p>
+    </div>
+    <div class="page-links">
+      <a href="/trips" class="aside-link" data-link>Trips</a>
+      <a href="/book" class="aside-link book-link" data-link>Book</a>
+      <a href="/travelers" class="aside-link travelers-link" data-link>Travelers</a>
+    </div>
+  </aside>
+
   <main class="main-section">
+    <nav class="nav">
+      <div>
+        <div>
+        <a href="/login" class="admin-link" data-link>Log Out</a>
+        </div>
+      </div>
+    </nav>
     <form class="form">
       <label class="date-picker-label form-label">Date</label>
       <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
@@ -24,7 +38,7 @@
       <input class="travelers-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
       <label class="destination-label form-label">Destination</label>
       <select name="destination"class="destination-input form-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
-        <option value="">Choose One!</option>
+        <option value="" disabled>Choose One!</option>
       </select>
       <button class="book-button" id="saveButton" disabled>Book</button>
       <span class="search-bar">
