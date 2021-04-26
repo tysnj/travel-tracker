@@ -18,10 +18,15 @@ body {
   font-family: "Open Sans";
   height: 100vh;
   display: flex;
+  position: relative;
 }
 
 * {
   font-family: "Open Sans";
+}
+
+li {
+  list-style-type: none;
 }
 
 /*~~~~~~~~NAV BARS~~~~~~~~~*/
@@ -30,12 +35,12 @@ body {
   color: #25291C;
   display: flex;
   flex-direction: column;
+  // position: absolute;
   align-content: flex-start;
   align-items: center;
   width: 20%;
-  height: 100vh;
-  // position: fixed;
-  margin-top: auto;
+  height: auto;
+  margin-top: 4%;
 
   &:hover {
 
@@ -71,13 +76,13 @@ body {
 .logo {
   font-size: 100%;
   font-weight: bold;
-  height: 5em;
+  height: 5rem;
 }
 
 .page-links{
   width: 100%;
 }
-.aside-link {
+.nav-link {
   background-color: #25291C;
   color: #E6E49F;
   width: 85%;
@@ -188,7 +193,7 @@ body {
 
 .trip-image-section {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
 
 .place-holder-image {
@@ -196,37 +201,63 @@ body {
   height: 100%;
  }
 
+ .nav {
+   height: 5rem;
+   background-color: #989C94;
+   border-bottom: solid 2px #E6E49F;
+   display: flex;
+   flex-flow: row;
+   justify-content: space-between;
+   position: absolute;
+   width: 100%;
+   overflow: hidden;
+ }
 
  .main-section {
    background-color: #25291C;
    height: 100vh;
-   // margin-left: 20%;
    display: flex;
    flex-direction: column;
    align-content: flex-end;
  }
 
- .nav {
-   height: 6em;
-   background-color: #989C94;
-   border-bottom: solid 2px #E6E49F;
-   display: flex;
-   justify-content: flex-end;
+ .destination-image-section {
+   height: 60vh;
+ }
+
+ .trip-image-container{
+   height: 60vh;
  }
 
 .trips-display {
   background-color: #E1E0A4;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
 .trip-container {
-  width: 20em;
-  height: 100%;
+  width: 18em;
+  height: 40%;
   border: 1px #25291C;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #25291C;
+  border-radius: 5%;
 }
-.hidden {
-  display: none !important;
+
+.page{
+  display:none;
+  // width:100%;
+  // min-height: 100%;
+  // position: fixed;
+  // padding: 1rem 2rem;
+}
+
+.active {
+  display: block;
 }

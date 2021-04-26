@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset = "UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap' rel='stylesheet'>
   <title>Travel Tracker</title>
 </head>
+
 <body>
-  <aside class="aside">
+  <nav class="nav">
     <div class="logo">
       <h1 class="logo-text">TravelTracker</h1>
     </div>
+    <div>
+      <div>
+        <a href="/login" class="admin-link" data-link>Log Out</a>
+      </div>
+    </div>
+  </nav>
+  <aside class="aside">
+
     <div class="greeting">
       <p class="greeting-text">Hello User</p>
     </div>
     <div class="page-links">
-      <a href="/trips" class="aside-link" data-link>Trips</a>
-      <a href="/book" class="aside-link book-link" data-link>Book</a>
-      <a href="/travelers" class="aside-link travelers-link" data-link>Travelers</a>
+      <li><a href="/#" class="nav-link trips-link" data-target="trips" data-link>Trips</a></li>
+      <li><a href="/#" class="nav-link book-link" data-target="booking" data-link>Book</a></li>
+      <li><a href="/#" class="nav-link travelers-link" data-target="travelers" data-link>Travelers</a></li>
     </div>
   </aside>
 
+<div class="page" id="booking">
   <main class="main-section">
-    <nav class="nav">
-      <div>
-        <div>
-        <a href="/login" class="admin-link" data-link>Log Out</a>
-        </div>
-      </div>
-    </nav>
     <form class="form">
       <label class="date-picker-label form-label">Date</label>
       <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
@@ -37,21 +41,44 @@
       <label class="travelers-label form-label"># of Travelers</label>
       <input class="travelers-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
       <label class="destination-label form-label">Destination</label>
-      <select name="destination"class="destination-input form-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
+      <select name="destination" class="destination-input form-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
         <option value="" disabled>Choose One!</option>
       </select>
       <button class="book-button" id="saveButton" disabled>Book</button>
+    </form>
+    <section class="destination-image-section" id=tripImage>
+      <div class="trip-image-container">
+        <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="page active" id="trips">
+  <main class="main-section">
+    <section class="destination-image-section">
+      <div class="trip-image-container">
+        <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+      </div>
+    </section>
+    <section class="trips-display" id=tripsDisplay>
+    </section>
+  </main>
+</div>
+
+<div class="page" id="travelers">
+  <m ain class="main-section">
+    <section class="search">
       <span class="search-bar">
         <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
       </span>
-    </form>
-    <div class="trip-image-section">
-      <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
-    </div>
-    <section class="trips-display" id=tripsDisplay>
     </section>
-    <section class="travelers-display" id=travelersDisplay hidden>
-    </section>
+  </section>
+  <section class="trips-display" id=tripsDisplay>
+  </section>
   </main>
+</div>
+
 </body>
+
 </html>
