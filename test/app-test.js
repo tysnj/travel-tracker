@@ -29,7 +29,7 @@ describe("App", () => {
   });
 
   it("should store the various views in a list", () => {
-    expect(app.pages).to.deep.eql(["login", "trips", "booking", "users"])
+    expect(app.pages).to.deep.eql(["login", "trips", "booking", "travelers"])
   });
 
   it("should know the login page is displayed by default", () => {

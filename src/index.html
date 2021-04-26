@@ -9,75 +9,127 @@
 </head>
 
 <body>
-  <nav class="nav">
-    <div class="logo">
-      <h1 class="logo-text">TravelTracker</h1>
+  <!-- log in page -->
+  <div class="page" id="login">
+    <div class="login">
+      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="40">
+      <label class="user-name-label login-label">User Name</label>
+      <input class="password-input login-input" id="passwordInput" type="text" style="font-size:30px;" maxlength="40">
+      <label class="password-label login-label">Password</label>
+      <button class="login-button" id="saveButton" disabled>Log In</button>
     </div>
-    <div>
+  </div>
+
+  <!-- trips page -->
+  <div class="page active" id="trips">
+    <nav class="nav">
+      <div class="logo">
+        <h1 class="logo-text">TravelTracker</h1>
+      </div>
       <div>
-        <a href="/login" class="admin-link" data-link>Log Out</a>
+        <div>
+          <li class="nav-link login-link" data-target="login" >Log Out</li>
+        </div>
       </div>
-    </div>
-  </nav>
-  <aside class="aside">
-
-    <div class="greeting">
-      <p class="greeting-text">Hello User</p>
-    </div>
-    <div class="page-links">
-      <li><a href="/#" class="nav-link trips-link" data-target="trips" data-link>Trips</a></li>
-      <li><a href="/#" class="nav-link book-link" data-target="booking" data-link>Book</a></li>
-      <li><a href="/#" class="nav-link travelers-link" data-target="travelers" data-link>Travelers</a></li>
-    </div>
-  </aside>
-
-<div class="page" id="booking">
-  <main class="main-section">
-    <form class="form">
-      <label class="date-picker-label form-label">Date</label>
-      <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
-      <label class="duration-label form-label">Duration</label>
-      <input class="duration-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
-      <label class="travelers-label form-label"># of Travelers</label>
-      <input class="travelers-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
-      <label class="destination-label form-label">Destination</label>
-      <select name="destination" class="destination-input form-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
-        <option value="" disabled>Choose One!</option>
-      </select>
-      <button class="book-button" id="saveButton" disabled>Book</button>
-    </form>
-    <section class="destination-image-section" id=tripImage>
-      <div class="trip-image-container">
-        <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+    </nav>
+    <aside class="aside">
+      <div class="greeting">
+        <p class="greeting-text">Hello User</p>
       </div>
-    </section>
-  </main>
-</div>
-
-<div class="page active" id="trips">
-  <main class="main-section">
-    <section class="destination-image-section">
-      <div class="trip-image-container">
-        <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+      <div class="page-links">
+        <li class="nav-link trips-link" data-target="trips" >Trips</li>
+        <li class="nav-link book-link" data-target="booking" >Book</li>
+        <li class="nav-link travelers-link" data-target="travelers" >Travelers</li>
       </div>
-    </section>
-    <section class="trips-display" id=tripsDisplay>
-    </section>
-  </main>
-</div>
+    </aside>
+    <main class="main-section">
+      <section class="destination-image-section">
+        <div class="trip-image-container">
+          <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+        </div>
+      </section>
+      <section class="trips-display" id=tripsDisplay>
+      </section>
+    </main>
+  </div>
 
-<div class="page" id="travelers">
-  <m ain class="main-section">
-    <section class="search">
-      <span class="search-bar">
-        <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
-      </span>
-    </section>
-  </section>
-  <section class="trips-display" id=tripsDisplay>
-  </section>
-  </main>
-</div>
+  <!-- booking page -->
+  <div class="page" id="booking">
+    <nav class="nav">
+      <div class="logo">
+        <h1 class="logo-text">TravelTracker</h1>
+      </div>
+      <div>
+        <div>
+          <li class="nav-link login-link" data-target="login" >Log Out</li>
+        </div>
+      </div>
+    </nav>
+    <aside class="aside">
+      <div class="greeting">
+        <p class="greeting-text">Hello User</p>
+      </div>
+      <div class="page-links">
+        <li class="nav-link trips-link" data-target="trips" >Trips</li>
+        <li class="nav-link book-link" data-target="booking" >Book</li>
+        <li class="nav-link travelers-link" data-target="travelers" >Travelers</li>
+      </div>
+    </aside>
+    <main class="main-section">
+      <form class="form">
+        <label class="date-picker-label form-label">Date</label>
+        <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
+        <label class="duration-label form-label">Duration</label>
+        <input class="duration-input form-input" id="durationInput" type="number" style="font-size:30px;" maxlength="40">
+        <label class="travelers-label form-label"># of Travelers</label>
+        <input class="travelers-input form-input" id="travelersInput" type="number" style="font-size:30px;" maxlength="40">
+        <label class="destination-label form-label">Destination</label>
+        <select name="destination" class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40">
+          <option value="" disabled>Choose One!</option>
+        </select>
+        <button class="book-button" id="saveButton" disabled>Book</button>
+      </form>
+      <section class="destination-image-section" id=tripImage>
+        <div class="trip-image-container">
+          <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- travelers page -->
+  <div class="page" id="travelers">
+    <nav class="nav">
+      <div class="logo">
+        <h1 class="logo-text">TravelTracker</h1>
+      </div>
+      <div>
+        <div>
+          <li class="nav-link login-link" data-target="login" >Log Out</li>
+        </div>
+      </div>
+    </nav>
+    <aside class="aside">
+      <div class="greeting">
+        <p class="greeting-text">Hello User</p>
+      </div>
+      <div class="page-links">
+        <li class="nav-link trips-link" data-target="trips" >Trips</li>
+        <li class="nav-link book-link" data-target="booking" >Book</li>
+        <li class="nav-link travelers-link" data-target="travelers" >Travelers</li>
+      </div>
+    </aside>
+    <main class="main-section">
+      <section class="search">
+        <span class="search-bar">
+          <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
+        </span>
+      </section>
+      </section>
+      <section class="trips-display" id=tripsDisplay>
+      </section>
+    </main>
+  </div>
 
 </body>
 

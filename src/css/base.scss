@@ -109,6 +109,12 @@ li {
   display: flex;
 }
 
+.login-link {
+  background: none;
+  border: none;
+
+}
+
 /*~~~~~~INPUT BOX~~~~~~~~~*/
 
 
@@ -257,7 +263,12 @@ li {
   // position: fixed;
   // padding: 1rem 2rem;
 }
+.big {
+  font-size: 200%;
+  font-weight: bolder;
+  height: 6rem;
+}
 
 .active {
-  display: block;
+  display: flex;
 }

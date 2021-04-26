@@ -4,7 +4,7 @@ export default class App {
   constructor(data = []) {
     this.stateOn = false;
     this.view; //"traveler" || "agency"
-    this.pages = ["login", "trips", "booking", "users"];
+    this.pages = ["login", "trips", "booking", "travelers"];
     this.display = "login";
     this.user;
     this.data = data;
