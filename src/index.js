@@ -30,54 +30,18 @@ import destinationsData from "../src/data/destinations-sample.js"
 // so, pretend data was just fetched, now pass it to the app
 
 
-// const app = new App([travelersData, tripsData, destinationsData])
-// let un = "traveler9";
-// let pw = "travel2020";
-// const fakeLogin = (un, pw) => app.login(un, pw)
-// fakeLogin(un,pw)
-// // console.log(app);
 
-// const index = {
-//   pages: [],
-//   show: new Event("show"),
-//   init: function(){
-//     index.pages = document.querySelectorAll(".page");
-//     index.pages.forEach((pg)=> {
-//       pg.addEventListener("show", index.pageShown);
-//     })
-//     document.querySelectorAll(".nav-link").forEach((link) => {
-//       link.addEventListener("click", index.nav);
-//     })
-//     history.replaceState({}, "Trips", "#trips")
-//     window.addEventListener("hashchange", index.poppin)
-//   },
-//   nav: function(ev){
-//     ev.preventDefault();
-//     let currentPage = ev.target.getAttribute("data-target");
-//     document.querySelector(".active").classList.remove("active");
-//     document.getElementById(currentPage).classList.add("active");
-//     history.pushState({}, currentPage, `${currentPage}`);
-//     document.getElementById(currentPage).dispatchEvent(index.show);
-//   },
-//   pageShown: function(ev){
-//     // REWRITE ALL OF THIS FUNCTION
-//     console.log("Page", ev.target.id, "just shown")
-//     let h1 = ev.target.querySelector("h1");
-//     h1.classList.add('big')
-//     setTimeout((h)=>{
-//       h.classList.remove("big")
-//     }, 1200, h1)
-//   },
-//   poppin: function(ev){
-//     console.log(location.hash, "popstate event");
-//     let hash = location.hash.replace("#", "");
-//     document.querySelector(".active").classList.remove("active");
-//     document.getElementById(currentPage).classList.add("active");
-//     history.pushState({}, currentPage, `${currentPage}`);
-//     document.getElementById(currentPage).dispatchEvent(index.show);
-//   }
-// }
-//
-// document.addEventListener('DOMContentLoaded', index.init)
+const app = new App([travelersData, tripsData, destinationsData])
+let un = "traveler9";
+let pw = "travel2020";
+const fakeLogin = (un, pw) => {
+  app.login(un, pw)
+  domUpdates.populateTrips(app.user.trips)
+}
+fakeLogin(un,pw)
+// console.log(app);
 
+const tripsDisplay = document.querySelectorAll(".trip-container");
+// const tripImageContainer = document.getElementById("tripImageContainer");
+tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(event, trip)))
 // app.login()
