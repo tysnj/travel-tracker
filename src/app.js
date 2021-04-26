@@ -27,12 +27,11 @@ export default class App {
   }
 
   validateCredentials(userName, password) {
-    if(userName.split("traveler")[0] === "" && password === "travel2020"){
+    if(userName.split("traveler")[0] === "" && password === "travel2020" &&
+      this.data[0].travelers.some(traveler => traveler.id == userName.split("traveler")[1])) {
       return this.view = "traveler"
-      // return true
     } else if (userName === "agency" && password === "travel2020") {
       return this.view = "agency"
-      // return true
     } else {
       return false
     }
@@ -40,7 +39,7 @@ export default class App {
 
   findUser(userName){
     let id = userName.split("traveler")[1];
-    let user = this.data[0].travelers.find(traveler => parseInt(id) === traveler.id);
+    let user = this.data[0].travelers.find(traveler => id == traveler.id);
     return user
   }
 

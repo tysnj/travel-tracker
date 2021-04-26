@@ -29,8 +29,9 @@ import destinationsData from "../src/data/destinations-sample.js"
 // create a fake log in scenario
 // so, pretend data was just fetched, now pass it to the app
 const app = new App([travelersData, tripsData, destinationsData])
-let un = "traveler09";
+let un = "traveler9";
 let pw = "travel2020";
 const fakeLogin = (un, pw) => app.login(un, pw)
 fakeLogin(un,pw)
+console.log(app);
 domUpdates.populateTrips(app.user.trips)
