@@ -1,47 +1,30 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-/* *~~~~color palett~~~~*
-#BDC2BF silver sand
-#E3E7D3 beige
-#989C94 spanish gray
-#25291C pine tree
-#E6E49F green yellow crayola
-#E5E3A0 beige
-*/
-
-$primary-background: radial-gradient(circle, #E6E49F 10%, #BDC2BF 100%);
-;
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "login";
+@import "trips";
+@import "booking";
 
 body {
-  background: $primary-background;
   margin: 0;
-  font-family: "Open Sans";
   height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden;
-}
-
-* {
   font-family: "Open Sans";
-}
-
-li {
   list-style-type: none;
 }
 
 /*~~~~~~~~NAV BARS~~~~~~~~~*/
 .aside {
-  background-color: #989C94;
-  color: #25291C;
+  background-color: $medium;
+  color: $dark;
   display: flex;
-  flex-direction: column;
-  // position: absolute;
+  @include flexin();
   align-content: flex-start;
-  align-items: center;
-  // width: 15%;
   height: auto;
   margin-top: 4%;
-  border-right: solid 2px #E6E49F;
+  border-right: solid 2px $accent;
 
   &:hover {
 
@@ -49,16 +32,14 @@ li {
 }
 
 .user-info {
-  border-top: solid 2px #E6E49F;
-  border-bottom: solid 2px #E6E49F;
-  display: flex;
-  color: #25291C;
-  flex-direction: column;
-  align-items: center;
+  border-top: solid 2px $accent;
+  border-bottom: solid 2px $accent;
+  color: $dark;
+  @include flexin();
   justify-content: center;
   height: 10em;
   font-weight: Light;
-  color: #25291C;
+  color: $dark;
   font-size: 15pt;
   font-weight: bold;
   width: 20vw;
@@ -66,10 +47,8 @@ li {
 }
 
 .aside>h1 {
-  color: #25291C;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: $dark;
+  @include flexin();
   font-size: 15pt;
   font-weight: bold;
 }
@@ -87,22 +66,20 @@ li {
   width: 100%;
 }
 .nav-link {
-  background-color: #25291C;
-  color: #E6E49F;
+  background-color: $dark;
+  color: $accent;
   width: 85%;
   margin-top: 6%;
   margin-left: 6%;
   padding: 2% 2% 2%;
   // font-size: 116%;
   font-weight: bold;
-  border-color: #989C94;
-  border: solid 3px #25291C;
+  border-color: $medium;
+  border: solid 3px $dark;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexin();
 }
 
 
@@ -129,19 +106,17 @@ li {
 
 
 .form {
-  background-color: #25291C;
+  background-color: $dark;
   height: 40vh;
   margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexin();
   justify-content: center;
-  border-bottom: solid 2px #E6E49F;
+  border-bottom: solid 2px $accent;
 }
 
 .form-label {
   font-size: 17px;
-  color: #E3E7D3;
+  color: $light;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -151,8 +126,8 @@ li {
 .form-input {
   width: 41%;
   // height: 2em;
-  // border: solid 3px #25291C;
-  color: #25291C;
+  // border: solid 3px $dark;
+  color: $dark;
   border-radius: 5px;
   outline: none;
   font-size: 15px;
@@ -163,18 +138,18 @@ li {
   width: 41%;
   // height: 9em;
   font-size: 18pt;
-  color: #25291C;
+  color: $dark;
   font-weight: bold;
   margin-top: 1.5%;
-  // border: solid 3px #BDC2BF;
+  // border: solid 3px $medium-light;
   border-radius: 5px;
   outline: none;
-  // background-color: #BDC2BF;
+  // background-color: $medium-light;
   cursor: pointer;
 }
 
 #saveButton:disabled {
-  // background-color: #BDC2BF;
+  // background-color: $medium-light;
   cursor: auto;
 }
 
@@ -184,7 +159,7 @@ li {
   height: 3em;
   margin-top: 1.5%;
   margin-bottom: 2%;
-  // border: solid 3px #E3E7D3;
+  // border: solid 3px $light;
   border-radius: 5px;
   outline: none;
   box-sizing: border-box;
@@ -195,7 +170,7 @@ li {
   height: auto;
   vertical-align: middle;
   padding-left: 2%;
-  // background-color: #E3E7D3;
+  // background-color: $light;
   padding-right: 3%;
 }
 
@@ -204,7 +179,7 @@ li {
   height: 88%;
   outline: none;
   font-size: 15px;
-  // color: #E3E7D3;
+  // color: $light;
 }
 
 .trip-image-section {
@@ -227,13 +202,14 @@ li {
    margin-top: 5px;
    margin-left: 1%;
    font-size: 3rem;
-   text-shadow:1px 1px #E3E7D3;
+   color: $accent;
+   text-shadow:2px 1px 1px $dark;
  }
 
  .nav {
    height: 5rem;
-   background-color: #989C94;
-   border-bottom: solid 2px #E6E49F;
+   background-color: $medium;
+   border-bottom: solid 2px $accent;
    display: flex;
    flex-flow: row;
    justify-content: space-between;
@@ -244,13 +220,10 @@ li {
  }
 
  .main-section {
-   background-color: #25291C;
+   background-color: $dark;
    height: 100vh;
-   // width: 80%;
-   display: flex;
-   flex-direction: column;
+   @include flexin();
    align-content: flex-end;
-   // margin-top: 5%;
  }
 
  .trip-image-section {
@@ -285,12 +258,12 @@ li {
 .trip-container {
   width: 18em;
   height: 50%;
-  border: 1px #25291C;
+  border: 1px $dark;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-  border: 2px solid #25291C;
+  border: 2px solid $dark;
   border-radius: 5%;
   margin-top: 2em;
 }
@@ -302,19 +275,19 @@ li {
 }
 
 .pending {
-  background-color: #BDC2BF;
+  background-color: $medium-light;
   opacity: 90%;
 }
 
 .approved {
-  background-color: #989C94;
+  background-color: $medium;
   opacity: 90%;
 }
 
 
 
 .selected {
-  border: solid 2px #E6E49F;
+  border: solid 2px $accent;
 
 }
 
@@ -338,7 +311,7 @@ li {
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: #E6E49F;
+  background-color: $accent;
   background: rgba(255, 251, 119, 0.3);
   width: 30rem;
   height: 20rem;
@@ -364,8 +337,8 @@ li {
 .login-error {
   display:none;
   position: absolute;
-  color: #25291C;
-  text-shadow:1px 1px #E3E7D3;
+  color: $dark;
+  text-shadow:1px 1px $light;
   margin-top: 15%;
 }
 

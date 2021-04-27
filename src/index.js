@@ -82,7 +82,7 @@ function fetch() {
     .then(allData => {
       app = new App(allData)
       startUp()
-      fakeIt()
+      accessibilityTest()
     })
 }
 
@@ -131,7 +131,7 @@ const bookTrip = (event) => {
   app.data[1].trips.push(tripData)
 }
 
-function fakeIt() {
+function accessibilityTest() {
     app.login("traveler19", "travel2020")
     domUpdates.populateTrips(app.user.trips);
     domUpdates.showTotalSpent(app.user);
