@@ -57,7 +57,7 @@ const domUpdates = {
 
   changeEst(app, num = 0) {
     if(app.display === "trips") {
-      domUpdates.showTotalSpent(app.user)
+      this.showTotalSpent(app.user)
     } else {
       let userInfo = document.getElementById("userInfo")
       userInfo.innerHTML = `Estimated trip cost: $${num}`
@@ -80,6 +80,17 @@ const domUpdates = {
     destImage.innerHTML = html
   },
 
+  setMinDate(date) {
+    const dateInput = document.getElementById("dateInput")
+    let minDate = date.split("/").join("-")
+    dateInput.setAttribute("min", minDate);
+  },
+
+  prepTrip() {
+    const bookButton = document.getElementById("bookButton");
+    bookButton.disabled = false;
+    console.log("trip prepped")
+  }
 }
 
 

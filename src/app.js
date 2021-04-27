@@ -1,4 +1,5 @@
 import Traveler from "../src/traveler.js"
+import dayjs from 'dayjs'
 
 export default class App {
   constructor(data = []) {
@@ -8,6 +9,7 @@ export default class App {
     this.display = "login";
     this.user;
     this.data = data;
+    this.date = dayjs().format("YYYY/MM/DD")
   }
 
   login(userName, password) {
