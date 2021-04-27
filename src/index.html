@@ -10,7 +10,7 @@
 
 <body>
   <!-- log in page -->
-  <div class="page logged-out" id="loggedOutPage">
+  <div class="page login" id="loggedOutPage">
     <div class="login-container">
       <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="40">
       <label class="user-name-label login-label">User Name</label>
@@ -26,30 +26,33 @@
       <div class="logo">
         <h1 class="logo-text">TravelTracker</h1>
       </div>
-      <div>
-        <div>
-          <li class="nav-link login-link" data-target="login">Log Out</li>
+      <div class="admin-features">
+        <div class="user-name-container" id="userNameDisplay">
+          <h2>User Name</h2>
+        </div>
+        <div class="login-logout-container">
+          <li class="nav-link login-link" id="loginPage">Log Out</li>
         </div>
       </div>
     </nav>
     <aside class="aside">
-      <div class="greeting">
+      <div class="user-info" id="userInfo">
         <p class="greeting-text">Hello User</p>
       </div>
       <div class="page-links">
-        <li class="nav-link trips-link" data-target="trips">Trips</li>
-        <li class="nav-link book-link" data-target="booking">Book</li>
-        <li class="nav-link travelers-link" data-target="travelers">Travelers</li>
+        <li class="nav-link trips-link" id="tripsPage">Trips</li>
+        <li class="nav-link book-link" id="bookingPage">Book</li>
+        <li class="nav-link travelers-link" id="travelersPage">Travelers</li>
       </div>
     </aside>
 
     <!-- trips page -->
-    <div class="page active">
+    <div class="trips page displayed">
       <main class="main-section">
-        <section class="destination-image-section">
+        <section class="trip-image-section">
           <div class="trip-image-container" id="tripImageContainer">
             <h1 class="destination-name">Let's Fly</h1>
-            <img class="trip-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+            <img class="trip-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80" alt="looking out at the wing of a flying plane">
           </div>
         </section>
         <section class="trips-display" id=tripsDisplay>
@@ -58,7 +61,7 @@
     </div>
 
     <!-- booking page -->
-    <div class="page">
+    <div class="booking page">
       <main class="main-section">
         <form class="form">
           <label class="date-picker-label form-label">Date</label>
@@ -74,15 +77,15 @@
           <button class="book-button" id="saveButton" disabled>Book</button>
         </form>
         <section class="destination-image-section" id=tripImage>
-          <div class="trip-image-container">
-            <img class="place-holder-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80">
+          <div class="destination-image-container">
+            <img class="destination-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80" alt="looking out at the wing of a flying plane">
           </div>
         </section>
       </main>
     </div>
 
     <!-- travelers page -->
-    <div class="page">
+    <div class="travelers page">
       <main class="main-section">
         <section class="search">
           <span class="search-bar">
