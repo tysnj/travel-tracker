@@ -227,6 +227,7 @@ li {
    margin-top: 5px;
    margin-left: 1%;
    font-size: 3rem;
+   text-shadow:1px 1px #E3E7D3;
  }
 
  .nav {
@@ -283,7 +284,7 @@ li {
 
 .trip-container {
   width: 18em;
-  height: 40%;
+  height: 50%;
   border: 1px #25291C;
   display: flex;
   flex-flow: wrap;
@@ -370,4 +371,15 @@ li {
 
 .err {
   display:block;
+}
+
+.trip-confirmation {
+  text-align: center;
+  font-size: 1.5rem;
+  width: min-content;
+  font-weight: 800;
+}
+
+.confirmation-text {
+
 }

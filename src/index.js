@@ -143,4 +143,5 @@ const bookTrip = (event) => {
   domUpdates.showTotalSpent(app.user);
   postData(tripData);
   app.data[1].trips.push(tripData)
+  domUpdates.tripConfirmation(app.user.trips[0])
 }

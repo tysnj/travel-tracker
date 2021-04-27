@@ -1,40 +1,33 @@
 import domUpdates from '../src/dom.js'
-const travelersAPI = 'http://localhost:3001/api/v1/travelers';
-const tripsAPI = 'http://localhost:3001/api/v1/trips';
-const destinationsAPI = 'http://localhost:3001/api/v1/destinations';
+const travelersEndpoint = 'http://localhost:3001/api/v1/travelers';
+const tripsEndpoint = 'http://localhost:3001/api/v1/trips';
+const destinationsEndpoint = 'http://localhost:3001/api/v1/destinations';
+
+const checkForError = (response) => {
+  if (!response.ok) {
+    throw new Error('Something went wrong, please try again.');
+  } else {
+    return response.json();
+  }
+}
 
 export const getData = () => {
-  let travelerData = fetch(travelersAPI)
-    .then(response => response.json())
-    .then(travelerData => {
-      return travelerData;
-    })
+  let travelerData = fetch(travelersEndpoint)
+    .then(response => checkForError(response))
 
-  let tripsData = fetch(tripsAPI)
-    .then(response => response.json())
-    .then(tripsData => {
-      return tripsData;
-    })
+  let tripsData = fetch(tripsEndpoint)
+    .then(response => checkForError(response))
 
-  let destinationsData = fetch(destinationsAPI)
-    .then(response => response.json())
-    .then(destinationsData => {
-      return destinationsData;
-    })
+  let destinationsData = fetch(destinationsEndpoint)
+    .then(response => checkForError(response))
 
   return Promise.all([travelerData, tripsData, destinationsData])
-    .then(data => {
-      // let allData = {};
-      // allData.travelerData = data[0];
-      // allData.tripsData = data[1];
-      // allData.destinationsData = data[2];
-      return data;
-    })
+    .then(data => data)
     .catch(err => domUpdates.displayErr(err))
 }
 
 export const postData = (data) => {
-  fetch(tripsAPI, {
+  fetch(tripsEndpoint, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

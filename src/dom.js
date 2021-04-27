@@ -10,6 +10,7 @@ const domUpdates = {
       ${trip.destination.destination}<br>
       ${trip.startDate} - ${trip.endDate}<br>
       Duration: ${trip.duration} days<br>
+      Travelers: ${trip.travelers}<br>
       Estimated Cost: $${trip.estCost.toLocaleString()}<br>
       Status: ${trip.status}
       </div>
@@ -47,8 +48,9 @@ const domUpdates = {
     if (display === "login") {
       document.querySelector(".logged-in").classList.remove("active");
       document.querySelector(".logged-out").classList.add("active");
-      // document.querySelector(".displayed").classList.remove("displayed");
-      // document.querySelector(`.${display}`).classList.add("displayed");
+      document.querySelector(".login-container").classList.add("displayed");
+      document.querySelector(".user-name-input").value = "";
+      document.querySelector(".password-input").value = "";
     } else {
       document.querySelector(".logged-out").classList.remove("active");
       document.querySelector(".logged-in").classList.add("active");
@@ -128,8 +130,20 @@ const domUpdates = {
 
   removeErr() {
     document.getElementById("loginErr").classList.remove("err")
+  },
+
+  tripConfirmation(tripInfo) {
+    const tripConf = document.getElementById("tripConfirmation");
+    const html = `<p class="confirmation-text">Your trip to ${tripInfo.destination.destination} has been booked!<br><br>
+    Your agent will be in touch.</p>`
+    tripConf.innerHTML = html
+    setTimeout(this.hideConf, 5000);
+  },
+
+  hideConf() {
+    const tripConf = document.getElementById("tripConfirmation");
+    tripConf.innerHTML = ""
   }
 }
-
 
 export default domUpdates;
