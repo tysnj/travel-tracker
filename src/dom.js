@@ -27,9 +27,9 @@ const domUpdates = {
     userNameDisplay.innerHTML = `<h2>${user.name}</h2>`;
   },
 
-  showTripImage(user, event) {
+  showTripImage(trips, event) {
     let tripImageContainer = document.getElementById("tripImageContainer");
-    let trip = user.trips.find(trip => trip.id === Number(event.target.id));
+    let trip = trips.find(trip => trip.id === Number(event.target.id));
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
     <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}">`;
     tripImageContainer.innerHTML = html;
@@ -121,7 +121,6 @@ const domUpdates = {
   },
 
   loginErr() {
-    console.log("nooooo");
     const loginErr = document.getElementById("loginErr");
     loginErr.classList.add("err")
     setTimeout(this.removeErr, 2000);
