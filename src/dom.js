@@ -14,25 +14,25 @@ const domUpdates = {
       Status: ${trip.status}
       </div>
       `)
-    })
+    });
   },
 
   showTotalSpent(user) {
-    let userInfo = document.getElementById("userInfo")
-    userInfo.innerHTML = `You've spent $${user.totalSpentThisYear.toLocaleString()} <br> in the last year`
+    let userInfo = document.getElementById("userInfo");
+    userInfo.innerHTML = `You've spent $${user.totalSpentThisYear.toLocaleString()} <br> in the last year`;
   },
 
   displayName(user) {
-    let userNameDisplay = document.getElementById("userNameDisplay")
-    userNameDisplay.innerHTML = `<h2>${user.name}</h2>`
+    let userNameDisplay = document.getElementById("userNameDisplay");
+    userNameDisplay.innerHTML = `<h2>${user.name}</h2>`;
   },
 
   showTripImage(user, event) {
     let tripImageContainer = document.getElementById("tripImageContainer");
-    let trip = user.trips.find(trip => trip.id === Number(event.target.id))
+    let trip = user.trips.find(trip => trip.id === Number(event.target.id));
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
-    <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}">`
-    tripImageContainer.innerHTML = html
+    <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}">`;
+    tripImageContainer.innerHTML = html;
   },
 
   showDefaultImage(event) {
@@ -40,7 +40,7 @@ const domUpdates = {
     let html = `<h1 class="destination-name">Let's Fly</h1>
     <img class="trip-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80"
     alt="looking out at the wing of a flying plane">`;
-    tripImageContainer.innerHTML = html
+    tripImageContainer.innerHTML = html;
   },
 
   changeView(display) {
@@ -58,27 +58,27 @@ const domUpdates = {
 
   changeEst(app, num = 0) {
     if(app.display === "trips") {
-      this.showTotalSpent(app.user)
+      this.showTotalSpent(app.user);
     } else {
-      let userInfo = document.getElementById("userInfo")
-      userInfo.innerHTML = `Estimated trip cost: $${num}`
+      let userInfo = document.getElementById("userInfo");
+      userInfo.innerHTML = `Estimated trip cost: $${num}`;
     }
   },
 
   getDestinations(data) {
-    let destInput = document.getElementById("destinationInput")
-    destInput.innerHTML = `<option value="None" disabled selected>Choose One!</option>`
+    let destInput = document.getElementById("destinationInput");
+    destInput.innerHTML = `<option value="None" disabled selected>Choose One!</option>`;
     data.forEach(dest => {
       destInput.insertAdjacentHTML("beforeend",
         `<option class="dest-option" value="${dest.id}">${dest.destination}</option>`)
-    })
+    });
   },
 
   showDestinationImage(destinations, event, destInput) {
-    const destImage = document.getElementById("destImageContainer")
-    let destination = destinations.find(dest => dest.id === Number(destInput))
-    let html = `<img class="destination-image" src="${destination.image}" alt="${destination.alt}">`
-    destImage.innerHTML = html
+    const destImage = document.getElementById("destImageContainer");
+    let destination = destinations.find(dest => dest.id === Number(destInput));
+    let html = `<img class="destination-image" src="${destination.image}" alt="${destination.alt}">`;
+    destImage.innerHTML = html;
   },
 
   setMinDate(date) {

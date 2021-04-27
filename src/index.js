@@ -42,9 +42,6 @@ const tripsPage = document.getElementById("tripsPage");
 const travelersInput = document.getElementById("travelersInput");
 const travelersPage = document.getElementById("travelersPage");
 
-tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
-tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
-
 bookingPage.addEventListener("click", () => {
   app.display = "booking";
   domUpdates.changeView(app.display);
@@ -72,6 +69,9 @@ travelersPage.addEventListener("click", () => {
   app.display = "travelers";
   domUpdates.changeView(app.display);
 });
+
+tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
+tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
 
 const getValue = () => document.getElementById("destinationInput").value;
 
@@ -103,4 +103,5 @@ const bookTrip = (event) => {
   app.display = "trips";
   domUpdates.populateTrips(app.user.trips)
   domUpdates.changeView(app.display);
+  domUpdates.showTotalSpent(app.user);
 }
