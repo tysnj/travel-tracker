@@ -67,7 +67,7 @@ const domUpdates = {
 
   getDestinations(data) {
     let destInput = document.getElementById("destinationInput")
-    destInput.innerHTML = `<option value="None">Choose One!</option>`
+    destInput.innerHTML = `<option value="None" disabled selected>Choose One!</option>`
     data.forEach(dest => {
       destInput.insertAdjacentHTML("beforeend",
         `<option class="dest-option" value="${dest.id}">${dest.destination}</option>`)

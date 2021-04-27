@@ -74,7 +74,7 @@ travelersPage.addEventListener("click", () => {
 const getValue = () => document.getElementById("destinationInput").value;
 
 const formCheck = () => {
-  if (dateInput.value && durationInput.value && travelersInput.value && destInput.value) {
+  if (dateInput.value && durationInput.value && travelersInput.value && destInput.value && destInput.value !== "None") {
     let tripData = {
       id: app.data[1].trips.length + 1,
       userID: app.user.id,
