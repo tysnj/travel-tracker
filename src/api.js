@@ -35,6 +35,6 @@ export const postData = (data) => {
       }
     })
     .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(err => console.log("post error", err));
+    .then(json => domUpdates.tripConfirmation())
+    .catch(err => domUpdates.displayErr(err));
 }

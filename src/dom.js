@@ -132,9 +132,9 @@ const domUpdates = {
     document.getElementById("loginErr").classList.remove("err")
   },
 
-  tripConfirmation(tripInfo) {
+  tripConfirmation() {
     const tripConf = document.getElementById("tripConfirmation");
-    const html = `<p class="confirmation-text">Your trip to ${tripInfo.destination.destination} has been booked!<br><br>
+    const html = `<p class="confirmation-text">Your trip has been booked!<br><br>
     Your agent will be in touch.</p>`
     tripConf.innerHTML = html
     setTimeout(this.hideConf, 5000);
