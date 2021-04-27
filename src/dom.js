@@ -45,10 +45,13 @@ const domUpdates = {
 
   changeView(display) {
     if (display === "login") {
-      document.querySelector(".active").classList.remove("active");
-      document.querySelector(".displayed").classList.remove("displayed");
-      document.querySelector(`.${display}`).classList.add("active");
+      document.querySelector(".logged-in").classList.remove("active");
+      document.querySelector(".logged-out").classList.add("active");
+      // document.querySelector(".displayed").classList.remove("displayed");
+      // document.querySelector(`.${display}`).classList.add("displayed");
     } else {
+      document.querySelector(".logged-out").classList.remove("active");
+      document.querySelector(".logged-in").classList.add("active");
       document.querySelector(".displayed").classList.remove("displayed");
       document.querySelector(".selected").classList.remove("selected");
       document.querySelector(`.${display}`).classList.add("displayed");
@@ -105,12 +108,28 @@ const domUpdates = {
     travelersInput.value = "";
   },
 
+  prepLogin() {
+    const loginButton = document.getElementById("loginButton");
+    loginButton.disabled = false;
+  },
+
   displayErr(err) {
-  const userInfo = document.getElementById('userInfo');
-  const message = err.message === 'Failed to fetch' ?
+    const userInfo = document.getElementById('userInfo');
+    const message = err.message === 'Failed to fetch' ?
     'Something went wrong. please check your internet connection' : err.message;
-  userInfo.innerHTML = message;
-}
+    userInfo.innerHTML = message;
+  },
+
+  loginErr() {
+    console.log("nooooo");
+    const loginErr = document.getElementById("loginErr");
+    loginErr.classList.add("err")
+    setTimeout(this.removeErr, 2000);
+  },
+
+  removeErr() {
+    document.getElementById("loginErr").classList.remove("err")
+  }
 }
 
 

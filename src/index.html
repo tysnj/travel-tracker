@@ -10,17 +10,20 @@
 
 <body>
   <!-- log in page -->
-  <div class="page login" id="loggedOutPage">
-    <div class="login-container">
-      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="40">
+  <div class="page logged-out active" id="loggedOutPage">
+    <img class="login-image" src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="looking up the aisle of a crowded plane">
+    <div class="login-container displayed">
+      <h1 class="greeting" id="greeting">WELCOME TO TRAVELTRACKER</h1>
+      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="15" required="required">
       <label class="user-name-label login-label">User Name</label>
-      <input class="password-input login-input" id="passwordInput" type="text" style="font-size:30px;" maxlength="40">
+      <input class="password-input login-input" id="passwordInput" type="text" style="font-size:30px;" maxlength="15" required="required">
       <label class="password-label login-label">Password</label>
-      <button class="login-button" id="saveButton" disabled>Log In</button>
+      <button class="login-button" id="loginButton" type="submit" disabled>Log In</button>
     </div>
+    <h2 class="login-error" id="loginErr">Invalid Credentials!</h2>
   </div>
   <!-- After log in -->
-  <div class="page logged-in active" id="loggedInPage">
+  <div class="page logged-in" id="loggedInPage">
     <!-- top and side nav -->
     <nav class="nav">
       <div class="logo">
@@ -47,7 +50,7 @@
     </aside>
 
     <!-- trips page -->
-    <div class="trips page displayed">
+    <div class="trips page">
       <main class="main-section">
         <section class="trip-image-section">
           <div class="trip-image-container" id="tripImageContainer">

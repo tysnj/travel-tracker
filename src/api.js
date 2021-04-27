@@ -7,19 +7,19 @@ export const getData = () => {
   let travelerData = fetch(travelersAPI)
     .then(response => response.json())
     .then(travelerData => {
-      return travelerData.travelers;
+      return travelerData;
     })
 
   let tripsData = fetch(tripsAPI)
     .then(response => response.json())
     .then(tripsData => {
-      return tripsData.trips;
+      return tripsData;
     })
 
   let destinationsData = fetch(destinationsAPI)
     .then(response => response.json())
     .then(destinationsData => {
-      return destinationsData.destinations;
+      return destinationsData;
     })
 
   return Promise.all([travelerData, tripsData, destinationsData])
@@ -28,7 +28,7 @@ export const getData = () => {
       // allData.travelerData = data[0];
       // allData.tripsData = data[1];
       // allData.destinationsData = data[2];
-      return allData;
+      return data;
     })
     .catch(err => domUpdates.displayErr(err))
 }
