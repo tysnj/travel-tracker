@@ -19,6 +19,7 @@ body {
   height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 * {
@@ -38,7 +39,7 @@ li {
   // position: absolute;
   align-content: flex-start;
   align-items: center;
-  width: 15%;
+  // width: 15%;
   height: auto;
   margin-top: 4%;
   border-right: solid 2px #E6E49F;
@@ -258,6 +259,7 @@ li {
 
  .destination-image-section {
    height: 30vh;
+   width: 100%;
  }
 
  .destination-image-container {
@@ -310,6 +312,7 @@ li {
 .displayed,
 .active {
   display: flex;
+  width: 100vw;
 }
 
 .selected {
