@@ -1,8 +1,9 @@
 const domUpdates = {
 
-  populateTrips(user) {
-    let tripsDisplay = document.getElementById("tripsDisplay")
-    user.trips.forEach(trip => {
+  populateTrips(trips) {
+    let tripsDisplay = document.getElementById("tripsDisplay");
+    tripsDisplay.innerHTML="";
+    trips.forEach(trip => {
       tripsDisplay.insertAdjacentHTML("beforeend",
         `<div class="trip-container ${trip.status}" id="${trip.id}">
       <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}" hidden>
@@ -27,7 +28,6 @@ const domUpdates = {
   },
 
   showTripImage(user, event) {
-    console.log('hover')
     let tripImageContainer = document.getElementById("tripImageContainer");
     let trip = user.trips.find(trip => trip.id === Number(event.target.id))
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
@@ -43,16 +43,16 @@ const domUpdates = {
     tripImageContainer.innerHTML = html
   },
 
-  changeView(app) {
-    if (app.display === "login") {
+  changeView(display) {
+    if (display === "login") {
       document.querySelector(".active").classList.remove("active");
       document.querySelector(".displayed").classList.remove("displayed");
-      document.querySelector(`.${app.display}`).classList.add("active");
+      document.querySelector(`.${display}`).classList.add("active");
     } else {
       document.querySelector(".displayed").classList.remove("displayed");
       document.querySelector(".selected").classList.remove("selected");
-      document.querySelector(`.${app.display}`).classList.add("displayed");
-      document.querySelector(`.${app.display}-link`).classList.add("selected");
+      document.querySelector(`.${display}`).classList.add("displayed");
+      document.querySelector(`.${display}-link`).classList.add("selected");
     }
   },
 
@@ -91,7 +91,19 @@ const domUpdates = {
     const bookButton = document.getElementById("bookButton");
     bookButton.disabled = false;
     let userInfo = document.getElementById("userInfo")
-    userInfo.innerHTML = `Estimated trip cost: $${trip.estCost}`  }
+    userInfo.innerHTML = `Estimated trip cost: $${trip.estCost}`
+  },
+
+  clearForm() {
+    const dateInput = document.getElementById("dateInput");
+    const destInput = document.getElementById("destinationInput");
+    const durationInput = document.getElementById("durationInput");
+    const travelersInput = document.getElementById("travelersInput");
+    dateInput.value = "";
+    destInput.value = "";
+    durationInput.value = "";
+    travelersInput.value = "";
+  }
 }
 
 
