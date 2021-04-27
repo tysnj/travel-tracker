@@ -49,15 +49,15 @@ bookingPage.addEventListener("click", () => {
   domUpdates.getDestinations(app.data[2].destinations);
   domUpdates.setMinDate(app.date);
 });
-dateInput.addEventListener('change', () => formCheck);
+dateInput.addEventListener('change', () => formCheck(event));
 destInput.addEventListener("change", () => domUpdates.showDestinationImage(app.data[2].destinations, event, getValue()));
-destInput.addEventListener('change', () => formCheck);
-durationInput.addEventListener('change', () => formCheck);
+destInput.addEventListener('change', () => formCheck(event));
+durationInput.addEventListener('change', () => formCheck(event));
 logOut.addEventListener("click", () => {
   app.display = "login";
   domUpdates.changeView(app);
 });
-travelersInput.addEventListener('change', () => formCheck);
+travelersInput.addEventListener('change', () => formCheck(event));
 tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
 tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
 tripsPage.addEventListener("click", () => {
@@ -73,8 +73,8 @@ travelersPage.addEventListener("click", () => {
 
 const getValue = () => document.getElementById("destinationInput").value;
 
-const formCheck = () => {
+const formCheck = (event) => {
   if (dateInput.value && durationInput.value && travelersInput.value && destInput.value) {
-    domUpdates.prepTrip()
+    domUpdates.prepTrip(app.user.trips , event)
   }
 };

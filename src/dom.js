@@ -27,6 +27,7 @@ const domUpdates = {
   },
 
   showTripImage(user, event) {
+    console.log('hover')
     let tripImageContainer = document.getElementById("tripImageContainer");
     let trip = user.trips.find(trip => trip.id === Number(event.target.id))
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
@@ -86,11 +87,11 @@ const domUpdates = {
     dateInput.setAttribute("min", minDate);
   },
 
-  prepTrip() {
+  prepTrip(event) {
     const bookButton = document.getElementById("bookButton");
     bookButton.disabled = false;
-    console.log("trip prepped")
-  }
+    let userInfo = document.getElementById("userInfo")
+    userInfo.innerHTML = `Estimated trip cost: $${num}`  }
 }
 
 

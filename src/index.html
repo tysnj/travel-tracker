@@ -65,16 +65,16 @@
       <main class="main-section">
         <form class="form" id="form">
           <label class="date-picker-label form-label">Date</label>
-          <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
+          <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40" required="required">
           <label class="duration-label form-label">Duration</label>
-          <input class="duration-input form-input" id="durationInput" type="number" min="1" style="font-size:30px;" maxlength="40">
+          <input class="duration-input form-input" id="durationInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
           <label class="travelers-label form-label"># of Travelers</label>
-          <input class="travelers-input form-input" id="travelersInput" type="number" min="1" style="font-size:30px;" maxlength="40">
+          <input class="travelers-input form-input" id="travelersInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
           <label class="destination-label form-label">Destination</label>
-          <select name="destination" class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40">
-            <option value="">Choose One!</option>
+          <select name="destination" class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40" required="required">
+            <option value="" disabled>Choose One!</option>
           </select>
-          <button class="book-button" id="bookButton" disabled>Book</button>
+          <button class="book-button" id="bookButton" type="submit" disabled>Book</button>
         </form>
         <section class="destination-image-section" onchange="getSelectedValue();" >
           <div class="destination-image-container" id=destImageContainer>

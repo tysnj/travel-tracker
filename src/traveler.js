@@ -32,8 +32,12 @@ export default class Traveler {
     }, 0)
   }
 
-  bookNewTrip(tripInfo, destinations) {
+  previewNewTrip(tripInfo, destinations) {
     let trip = new Trip(tripInfo, destinations);
-    this.trips.push(trip);
+    return trip
+  }
+
+  bookNewTrip(tripInfo, destinations) {
+    this.trips.push(this.previewNewTrip(tripInfo, destinations));
   }
 }
