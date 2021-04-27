@@ -38,7 +38,7 @@ li {
   // position: absolute;
   align-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 15%;
   height: auto;
   margin-top: 4%;
   border-right: solid 2px #E6E49F;
@@ -105,13 +105,7 @@ li {
   align-items: center;
 }
 
-.travelers-link {
-  display: none;
-}
 
-.book-link {
-  display: flex;
-}
 
 .admin-features {
   width: 15%;
@@ -128,6 +122,8 @@ li {
   border: none;
   margin-left: 30%;
 }
+
+
 
 /*~~~~~~INPUT BOX~~~~~~~~~*/
 
@@ -156,7 +152,7 @@ li {
   width: 41%;
   // height: 2em;
   // border: solid 3px #25291C;
-  color: #BDC2BF;
+  color: #25291C;
   border-radius: 5px;
   outline: none;
   font-size: 15px;
@@ -228,7 +224,7 @@ li {
 
  .destination-name {
    position: absolute;
-   // margin-top: 5%;
+   margin-top: 5px;
    margin-left: 1%;
    font-size: 3rem;
  }
@@ -249,7 +245,7 @@ li {
  .main-section {
    background-color: #25291C;
    height: 100vh;
-   width: 80vw;
+   // width: 80%;
    display: flex;
    flex-direction: column;
    align-content: flex-end;
@@ -296,7 +292,8 @@ li {
   margin-top: 2em;
 }
 
-.page{
+.page,
+.hidden {
   display:none;
 }
 
@@ -313,4 +310,9 @@ li {
 .displayed,
 .active {
   display: flex;
+}
+
+.selected {
+  border: solid 2px #E6E49F;
+
 }

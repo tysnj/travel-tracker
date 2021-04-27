@@ -1,8 +1,8 @@
 const domUpdates = {
 
-  populateTrips(data) {
+  populateTrips(user) {
     let tripsDisplay = document.getElementById("tripsDisplay")
-    data.user.trips.forEach(trip => {
+    user.trips.forEach(trip => {
       tripsDisplay.insertAdjacentHTML("beforeend",
         `<div class="trip-container ${trip.status}" id="${trip.id}">
       <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}" hidden>
@@ -16,19 +16,19 @@ const domUpdates = {
     })
   },
 
-  showTotalSpent(data) {
+  showTotalSpent(user) {
     let userInfo = document.getElementById("userInfo")
-    userInfo.innerHTML = `You've spent $${data.user.totalSpentThisYear.toLocaleString()} <br> in the last year`
+    userInfo.innerHTML = `You've spent $${user.totalSpentThisYear.toLocaleString()} <br> in the last year`
   },
 
-  displayName(data) {
+  displayName(user) {
     let userNameDisplay = document.getElementById("userNameDisplay")
-    userNameDisplay.innerHTML = `<h2>${data.user.name}</h2>`
+    userNameDisplay.innerHTML = `<h2>${user.name}</h2>`
   },
 
-  showTripImage(data, event) {
+  showTripImage(user, event) {
     let tripImageContainer = document.getElementById("tripImageContainer");
-    let trip = data.user.trips.find(trip => trip.id === Number(event.target.id))
+    let trip = user.trips.find(trip => trip.id === Number(event.target.id))
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
     <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}">`
     tripImageContainer.innerHTML = html
@@ -42,16 +42,43 @@ const domUpdates = {
     tripImageContainer.innerHTML = html
   },
 
-  changeView(data) {
-    if (data.display === "login") {
+  changeView(app) {
+    if (app.display === "login") {
       document.querySelector(".active").classList.remove("active");
       document.querySelector(".displayed").classList.remove("displayed");
-      document.querySelector(`.${data.display}`).classList.add("active");
+      document.querySelector(`.${app.display}`).classList.add("active");
     } else {
       document.querySelector(".displayed").classList.remove("displayed");
-      document.querySelector(`.${data.display}`).classList.add("displayed");
+      document.querySelector(".selected").classList.remove("selected");
+      document.querySelector(`.${app.display}`).classList.add("displayed");
+      document.querySelector(`.${app.display}-link`).classList.add("selected");
     }
-  }
+  },
+
+  changeEst(app, num = 0) {
+    if(app.display === "trips") {
+      domUpdates.showTotalSpent(app.user)
+    } else {
+      let userInfo = document.getElementById("userInfo")
+      userInfo.innerHTML = `Estimated trip cost: $${num}`
+    }
+  },
+
+  getDestinations(data) {
+    let destInput = document.getElementById("destinationInput")
+    destInput.innerHTML = `<option value="None">Choose One!</option>`
+    data.forEach(dest => {
+      destInput.insertAdjacentHTML("beforeend",
+        `<option class="dest-option" value="${dest.destination}" id="${dest.id}">${dest.destination}</option>`)
+    })
+  },
+
+  showDestinationImage(destinations, event, destInput) {
+    const destImage = document.getElementById("destImageContainer")
+    let destination = destinations.find(dest => dest.destination === destInput)
+    let html = `<img class="destination-image" src="${destination.image}" alt="${destination.alt}">`
+    destImage.innerHTML = html
+  },
 
 }
 

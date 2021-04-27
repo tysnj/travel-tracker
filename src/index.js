@@ -16,8 +16,6 @@ import tripsData from "../src/data/trips-sample.js"
 import destinationsData from "../src/data/destinations-sample.js"
 
 
-
-
 // index tells api fetch all that data
 // index passes the data on to instantiate an App object
 // index passes app state to dom for display
@@ -38,15 +36,14 @@ let un = "traveler9";
 let pw = "travel2020";
 const fakeLogin = (un, pw) => {
   app.login(un, pw)
-  domUpdates.populateTrips(app)
-  domUpdates.showTotalSpent(app)
-  domUpdates.displayName(app)
+  domUpdates.populateTrips(app.user)
+  domUpdates.showTotalSpent(app.user)
+  domUpdates.displayName(app.user)
 }
 fakeLogin(un,pw)
-// console.log(app);
 
 const tripsDisplay = document.querySelectorAll(".trip-container");
-tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app, event)));
+tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
 tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
 
 const bookingPage = document.getElementById("bookingPage");
@@ -57,11 +54,14 @@ const logOut = document.getElementById("loginPage")
 bookingPage.addEventListener("click", () => {
   app.display = "booking";
   domUpdates.changeView(app);
+  domUpdates.changeEst(app);
+  domUpdates.getDestinations(app.data[2].destinations);
 })
 
 tripsPage.addEventListener("click", () => {
   app.display = "trips";
   domUpdates.changeView(app);
+  domUpdates.changeEst(app);
 })
 
 travelersPage.addEventListener("click", () => {
@@ -73,3 +73,7 @@ logOut.addEventListener("click", () => {
   app.display = "login";
   domUpdates.changeView(app);
 })
+
+const destInput = document.getElementById("destinationInput")
+destInput.addEventListener("change", () => domUpdates.showDestinationImage(app.data[2].destinations, event, getValue()))
+const getValue = () => document.getElementById("destinationInput").value
