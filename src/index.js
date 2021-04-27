@@ -22,8 +22,6 @@ const tripsPage = document.getElementById("tripsPage");
 const travelersInput = document.getElementById("travelersInput");
 const travelersPage = document.getElementById("travelersPage");
 const userNameInput = document.getElementById("userNameInput");
-// tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
-// tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
 
 tripsDisplay.addEventListener("mouseover", (event) => {
   if (event.target.classList.contains("trip-container")) {
@@ -36,19 +34,6 @@ tripsDisplay.addEventListener("mouseout", (event) => {
     domUpdates.showDefaultImage(app.user.trips, event)
   }
 })
-
-// index tells api fetch all that data
-// index passes the data on to instantiate an App object
-// index passes app state to dom for display
-
-//user logs in and index is first to know
-//index takes un/pw and passes it to app.login
-//app instantiates the user and passes data back to index
-//index passes new app state to dom for display
-
-// first instantiate the app with local data
-// create a fake log in scenario
-// so, pretend data was just fetched, now pass it to the app
 
 bookingPage.addEventListener("click", () => {
   app.display = "booking";
@@ -97,6 +82,7 @@ function fetch() {
     .then(allData => {
       app = new App(allData)
       startUp()
+      fakeIt()
     })
 }
 
@@ -143,4 +129,12 @@ const bookTrip = (event) => {
   domUpdates.showTotalSpent(app.user);
   postData(tripData);
   app.data[1].trips.push(tripData)
+}
+
+function fakeIt() {
+    app.login("traveler19", "travel2020")
+    domUpdates.populateTrips(app.user.trips);
+    domUpdates.showTotalSpent(app.user);
+    domUpdates.displayName(app.user);
+    domUpdates.changeView(app.display)
 }

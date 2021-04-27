@@ -297,7 +297,7 @@ li {
 
 .page,
 .hidden {
-  display:none;
+  display: none;
   width: 100vw;
 }
 
@@ -380,6 +380,9 @@ li {
   font-weight: 800;
 }
 
-.confirmation-text {
-
+.ditch{
+  display:none;
+}
+.show{
+  display:flex;
 }
