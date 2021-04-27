@@ -70,13 +70,13 @@ const domUpdates = {
     destInput.innerHTML = `<option value="None">Choose One!</option>`
     data.forEach(dest => {
       destInput.insertAdjacentHTML("beforeend",
-        `<option class="dest-option" value="${dest.destination}" id="${dest.id}">${dest.destination}</option>`)
+        `<option class="dest-option" value="${dest.id}">${dest.destination}</option>`)
     })
   },
 
   showDestinationImage(destinations, event, destInput) {
     const destImage = document.getElementById("destImageContainer")
-    let destination = destinations.find(dest => dest.destination === destInput)
+    let destination = destinations.find(dest => dest.id === Number(destInput))
     let html = `<img class="destination-image" src="${destination.image}" alt="${destination.alt}">`
     destImage.innerHTML = html
   },
@@ -87,11 +87,11 @@ const domUpdates = {
     dateInput.setAttribute("min", minDate);
   },
 
-  prepTrip(event) {
+  prepTrip(trip) {
     const bookButton = document.getElementById("bookButton");
     bookButton.disabled = false;
     let userInfo = document.getElementById("userInfo")
-    userInfo.innerHTML = `Estimated trip cost: $${num}`  }
+    userInfo.innerHTML = `Estimated trip cost: $${trip.estCost}`  }
 }
 
 
