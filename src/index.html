@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset = "UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap' rel='stylesheet'>
   <title>Travel Tracker</title>
 </head>
+
 <body>
-  <nav class="nav">
-    <h1>TravelTracker</h1>
-    <p class="greeting">Hello User</p>
-    <!-- <a href="/trips" class="nav-link" data-link>Trips</a> -->
-    <a href="/book" class="nav-link book-link" data-link>Book</a>
-    <a href="/travelers" class="nav-link travelers-link" data-link>Travelers</a>
-  </nav>
-  <main class="main-section">
-    <form class="form">
-      <label class="date-picker-label form-label">Date</label>
-      <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40">
-      <label class="duration-label form-label">Duration</label>
-      <input class="duration-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
-      <label class="travelers-label form-label"># of Travelers</label>
-      <input class="travelers-input form-input" id="dateInput" type="number" style="font-size:30px;" maxlength="40">
-      <label class="destination-label form-label">Destination</label>
-      <select name="destination"class="destination-input form-input" id="dateInput" type="text" style="font-size:30px;" maxlength="40">
-        <option value="Zion">Moab</option>
-        <option value="Joshua Tree">Joshua Tree</option>
-        <option value="Arches">Arches</option>
-        <option value="Canyon Lands">Canyon Lands</option>
-      </select>
-      <button class="book-button" id="saveButton" disabled>Book</button>
-      <span class="search-bar">
-        <img class="search-icon" src="assets/search.svg" alt="search">
-        <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
-      </span>
-    </form>
-    <section class="trips-display" id=tripsDisplay>
-    </section>
-    <section class="travelers-display" id=travelersDisplay hidden>
-    </section>
-  </main>
+  <!-- log in page -->
+  <div class="page login" id="loggedOutPage">
+    <div class="login-container">
+      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="40">
+      <label class="user-name-label login-label">User Name</label>
+      <input class="password-input login-input" id="passwordInput" type="text" style="font-size:30px;" maxlength="40">
+      <label class="password-label login-label">Password</label>
+      <button class="login-button" id="saveButton" disabled>Log In</button>
+    </div>
+  </div>
+  <!-- After log in -->
+  <div class="page logged-in active" id="loggedInPage">
+    <!-- top and side nav -->
+    <nav class="nav">
+      <div class="logo">
+        <h1 class="logo-text">TravelTracker</h1>
+      </div>
+      <div class="admin-features">
+        <div class="user-name-container" id="userNameDisplay">
+          <h2>User Name</h2>
+        </div>
+        <div class="login-logout-container">
+          <li class="nav-link login-link" id="loginPage">Log Out</li>
+        </div>
+      </div>
+    </nav>
+    <aside class="aside">
+      <div class="user-info" id="userInfo">
+        <p class="greeting-text">Hello User</p>
+      </div>
+      <div class="page-links">
+        <li class="nav-link trips-link selected" id="tripsPage">Trips</li>
+        <li class="nav-link booking-link" id="bookingPage">Booking</li>
+        <li class="nav-link travelers-link hidden" id="travelersPage">Travelers</li>
+      </div>
+    </aside>
+
+    <!-- trips page -->
+    <div class="trips page displayed">
+      <main class="main-section">
+        <section class="trip-image-section">
+          <div class="trip-image-container" id="tripImageContainer">
+            <h1 class="destination-name">Let's Fly</h1>
+            <img class="trip-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80" alt="looking out at the wing of a flying plane">
+          </div>
+        </section>
+        <section class="trips-display" id=tripsDisplay>
+        </section>
+      </main>
+    </div>
+
+    <!-- booking page -->
+    <div class="booking page">
+      <main class="main-section">
+        <form class="form" id="form">
+          <label class="date-picker-label form-label">Date</label>
+          <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40" required="required">
+          <label class="duration-label form-label">Duration</label>
+          <input class="duration-input form-input" id="durationInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
+          <label class="travelers-label form-label"># of Travelers</label>
+          <input class="travelers-input form-input" id="travelersInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
+          <label class="destination-label form-label">Destination</label>
+          <select name="destination" class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40" required="required">
+            <option value="None" disabled>Choose One!</option>
+          </select>
+          <button class="book-button" id="bookButton" type="submit" disabled>Book</button>
+        </form>
+        <section class="destination-image-section">
+          <div class="destination-image-container" id=destImageContainer>
+            <img class="destination-image" src="https://images.unsplash.com/photo-1551748629-08d916ed6682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1929&q=80" alt="looking out at the wing of a flying plane">
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- travelers page -->
+    <div class="travelers page">
+      <main class="main-section">
+        <section class="search">
+          <span class="search-bar">
+            <input class="search" id="searchInput" type="text" placeholder="Search ideas" style="font-size:30px;">
+          </span>
+        </section>
+        </section>
+        <section class="trips-display" id=tripsDisplay>
+        </section>
+      </main>
+    </div>
+  </div>
+
 </body>
+
 </html>

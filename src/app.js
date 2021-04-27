@@ -1,13 +1,15 @@
 import Traveler from "../src/traveler.js"
+import dayjs from 'dayjs'
 
 export default class App {
   constructor(data = []) {
     this.stateOn = false;
     this.view; //"traveler" || "agency"
-    this.pages = ["login", "trips", "booking", "users"];
+    this.pages = ["login", "trips", "booking", "travelers"];
     this.display = "login";
     this.user;
     this.data = data;
+    this.date = dayjs().format("YYYY/MM/DD")
   }
 
   login(userName, password) {
@@ -27,12 +29,11 @@ export default class App {
   }
 
   validateCredentials(userName, password) {
-    if(userName.split("traveler")[0] === "" && password === "travel2020"){
-      this.view = "traveler"
-      return true
+    if(userName.split("traveler")[0] === "" && password === "travel2020" &&
+      this.data[0].travelers.some(traveler => traveler.id == userName.split("traveler")[1])) {
+      return this.view = "traveler"
     } else if (userName === "agency" && password === "travel2020") {
-      this.view = "agency"
-      return true
+      return this.view = "agency"
     } else {
       return false
     }
@@ -40,7 +41,7 @@ export default class App {
 
   findUser(userName){
     let id = userName.split("traveler")[1];
-    let user = this.data[0].travelers.find(traveler => parseInt(id) === traveler.id);
+    let user = this.data[0].travelers.find(traveler => id == traveler.id);
     return user
   }
 

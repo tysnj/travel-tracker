@@ -1,4 +1,5 @@
 import Destination from "../src/destination.js"
+import dayjs from 'dayjs'
 
 export default class Trip {
   constructor({id, userID, destinationID, travelers, date, duration, status = "pending", suggestedActivities = []}, destinations) {
@@ -6,10 +7,11 @@ export default class Trip {
     this.userID = userID;
     this.destinationID = destinationID;
     this.travelers = travelers;
-    this.date = date;
+    this.startDate = date;
     this.duration = duration;
     this.status = status;
     this.suggestedActivities = suggestedActivities;
+    this.endDate = this.getEndDate(date)
     this.destination = this.getDestination(destinations);
     this.estCost = 0;
     this.getEstCost();
@@ -28,5 +30,10 @@ export default class Trip {
     let costPerTrip = lodgingCost + flightCost;
     let agentFee = .1 * costPerTrip
     this.estCost = (costPerTrip + agentFee)
+  }
+
+  getEndDate(startDate) {
+    let endDate = dayjs(startDate).add(this.duration, "day").format("YYYY/MM/DD")
+    return endDate
   }
 }

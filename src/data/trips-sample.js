@@ -136,7 +136,7 @@ let tripsData = {
       "travelers": 1,
       "date": "2020/09/24",
       "duration": 10,
-      "status": "approved",
+      "status": "pending",
       "suggestedActivities": []
     },
     {

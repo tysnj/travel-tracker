@@ -22,6 +22,12 @@ describe("Traveler", () => {
 
   it("should store total spent on trips this year", () => expect(traveler.totalSpentThisYear).to.eql(6919));
 
+  it("should be able to preview a new trip", () => {
+    let tripInfo = {id: 20, userID: 1, destinationID: 1, travelers: 1, date: "2020/12/06", duration: 2}
+    let trip = new Trip(tripInfo, destinationsData)
+    expect(traveler.previewNewTrip(tripInfo, destinationsData)).to.eql(trip);
+  });
+
   it("should be able to book a new trip", () => {
     let tripInfo = {id: 20, userID: 1, destinationID: 1, travelers: 1, date: "2020/12/06", duration: 2}
     traveler.bookNewTrip(tripInfo, destinationsData);

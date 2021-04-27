@@ -14,6 +14,7 @@ export default class Traveler {
 
   getTrips(tripData, destData) {
     let travelerTrips = tripData.trips.filter(trip => trip.userID === this.id)
+    .sort((a, b) => dayjs(b.date) - dayjs(a.date))
     .forEach(instance => {
       let trip = new Trip(instance, destData)
       this.trips.push(trip)
@@ -24,15 +25,19 @@ export default class Traveler {
   getTotalSpentThisYear() {
     let oneYearAgo = dayjs().subtract(1, "year").format("YYYY/MM/DD")
     this.totalSpentThisYear = this.trips.reduce((total, trip) => {
-      if (trip.date > oneYearAgo){
+      if (trip.startDate > oneYearAgo){
       total += trip.estCost
     }
       return total
     }, 0)
   }
 
-  bookNewTrip(tripInfo, destinations) {
+  previewNewTrip(tripInfo, destinations) {
     let trip = new Trip(tripInfo, destinations);
-    this.trips.push(trip);
+    return trip
+  }
+
+  bookNewTrip(tripInfo, destinations) {
+    this.trips.push(this.previewNewTrip(tripInfo, destinations));
   }
 }

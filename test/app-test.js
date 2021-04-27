@@ -4,6 +4,7 @@ import tripsData from "../src/data/trips-sample.js"
 import travelersData from "../src/data/travelers-sample.js"
 import Traveler from "../src/traveler.js"
 import App from "../src/app.js"
+import dayjs from 'dayjs'
 
 let app, traveler, newApp
 
@@ -29,7 +30,7 @@ describe("App", () => {
   });
 
   it("should store the various views in a list", () => {
-    expect(app.pages).to.deep.eql(["login", "trips", "booking", "users"])
+    expect(app.pages).to.deep.eql(["login", "trips", "booking", "travelers"])
   });
 
   it("should know the login page is displayed by default", () => {
@@ -51,5 +52,15 @@ describe("App", () => {
   it("should store a user object after login", () => {
     expect(app.user).to.be.an.instanceOf(Traveler);
   });
+
+  it("should store the data", () => {
+    expect(app.data).to.be.an("array");
+    expect(app.data[0]).to.be.an("object");
+  })
+
+  it("should store the current date", () => {
+    let date = dayjs().format("YYYY/MM/DD")
+    expect(app.date).to.eql(date);
+  })
 
 })
