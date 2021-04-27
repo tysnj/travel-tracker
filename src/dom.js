@@ -10,6 +10,7 @@ const domUpdates = {
       ${trip.destination.destination}<br>
       ${trip.startDate} - ${trip.endDate}<br>
       Duration: ${trip.duration} days<br>
+      Travelers: ${trip.travelers}<br>
       Estimated Cost: $${trip.estCost.toLocaleString()}<br>
       Status: ${trip.status}
       </div>
@@ -27,9 +28,9 @@ const domUpdates = {
     userNameDisplay.innerHTML = `<h2>${user.name}</h2>`;
   },
 
-  showTripImage(user, event) {
+  showTripImage(trips, event) {
     let tripImageContainer = document.getElementById("tripImageContainer");
-    let trip = user.trips.find(trip => trip.id === Number(event.target.id));
+    let trip = trips.find(trip => trip.id === Number(event.target.id));
     let html = `<h1 class="destination-name">${trip.destination.destination}</h1>
     <img class="trip-image" src="${trip.destination.image}" alt="${trip.destination.alt}">`;
     tripImageContainer.innerHTML = html;
@@ -45,10 +46,14 @@ const domUpdates = {
 
   changeView(display) {
     if (display === "login") {
-      document.querySelector(".active").classList.remove("active");
-      document.querySelector(".displayed").classList.remove("displayed");
-      document.querySelector(`.${display}`).classList.add("active");
+      document.querySelector(".logged-in").classList.remove("active");
+      document.querySelector(".logged-out").classList.add("active");
+      document.querySelector(".login-container").classList.add("displayed");
+      document.querySelector(".user-name-input").value = "";
+      document.querySelector(".password-input").value = "";
     } else {
+      document.querySelector(".logged-out").classList.remove("active");
+      document.querySelector(".logged-in").classList.add("active");
       document.querySelector(".displayed").classList.remove("displayed");
       document.querySelector(".selected").classList.remove("selected");
       document.querySelector(`.${display}`).classList.add("displayed");
@@ -103,8 +108,42 @@ const domUpdates = {
     destInput.value = "";
     durationInput.value = "";
     travelersInput.value = "";
+  },
+
+  prepLogin() {
+    const loginButton = document.getElementById("loginButton");
+    loginButton.disabled = false;
+  },
+
+  displayErr(err) {
+    const userInfo = document.getElementById('userInfo');
+    const message = err.message === 'Failed to fetch' ?
+    'Something went wrong. please check your internet connection' : err.message;
+    userInfo.innerHTML = message;
+  },
+
+  loginErr() {
+    const loginErr = document.getElementById("loginErr");
+    loginErr.classList.add("err")
+    setTimeout(this.removeErr, 2000);
+  },
+
+  removeErr() {
+    document.getElementById("loginErr").classList.remove("err")
+  },
+
+  tripConfirmation() {
+    const tripConf = document.getElementById("tripConfirmation");
+    const html = `<p class="confirmation-text">Your trip has been booked!<br><br>
+    Your agent will be in touch.</p>`
+    tripConf.innerHTML = html
+    setTimeout(this.hideConf, 5000);
+  },
+
+  hideConf() {
+    const tripConf = document.getElementById("tripConfirmation");
+    tripConf.innerHTML = ""
   }
 }
-
 
 export default domUpdates;

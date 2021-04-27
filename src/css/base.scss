@@ -227,6 +227,7 @@ li {
    margin-top: 5px;
    margin-left: 1%;
    font-size: 3rem;
+   text-shadow:1px 1px #E3E7D3;
  }
 
  .nav {
@@ -278,11 +279,12 @@ li {
   flex-flow: wrap;
   justify-content: space-around;
   align-items: flex-start;
+  overflow-y: scroll;
 }
 
 .trip-container {
   width: 18em;
-  height: 40%;
+  height: 50%;
   border: 1px #25291C;
   display: flex;
   flex-flow: wrap;
@@ -296,6 +298,7 @@ li {
 .page,
 .hidden {
   display:none;
+  width: 100vw;
 }
 
 .pending {
@@ -308,13 +311,75 @@ li {
   opacity: 90%;
 }
 
-.displayed,
+
+
+.selected {
+  border: solid 2px #E6E49F;
+
+}
+
+.logged-out {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.greeting{
+  position: absolute;
+  margin-top: -100%;
+  font-size: 30pt;
+  text-align: center;
+}
+
+.login-container {
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #E6E49F;
+  background: rgba(255, 251, 119, 0.3);
+  width: 30rem;
+  height: 20rem;
+  border-radius: 7%;
+  font-size: 20pt;
+}
+
+.displayed {
+  display: flex;
+
+}
 .active {
   display: flex;
   width: 100vw;
 }
 
-.selected {
-  border: solid 2px #E6E49F;
+.login-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.login-error {
+  display:none;
+  position: absolute;
+  color: #25291C;
+  text-shadow:1px 1px #E3E7D3;
+  margin-top: 15%;
+}
+
+.err {
+  display:block;
+}
+
+.trip-confirmation {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 50%;
+  font-weight: 800;
+}
+
+.confirmation-text {
 
 }

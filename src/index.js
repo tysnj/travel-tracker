@@ -1,24 +1,42 @@
 import dayjs from 'dayjs';
 import './css/base.scss';
 import domUpdates from './dom.js';
-import travelersData from "../src/data/travelers-sample.js";
-import tripsData from "../src/data/trips-sample.js";
-import destinationsData from "../src/data/destinations-sample.js";
+import { getData, postData } from '../src/api.js';
+// import travelersData from "../src/data/travelers-sample.js";
+// import tripsData from "../src/data/trips-sample.js";
+// import destinationsData from "../src/data/destinations-sample.js";
 import App from '../src/app.js';
-const app = new App([travelersData, tripsData, destinationsData]);
 
-///////////////////////////////////
-let un = "traveler9";
-let pw = "travel2020";
-const fakeLogin = (un, pw) => {
-  app.login(un, pw)
-  domUpdates.populateTrips(app.user.trips)
-  domUpdates.showTotalSpent(app.user)
-  domUpdates.displayName(app.user)
-};
+let app; // = new App([travelersData, tripsData, destinationsData]);
 
-fakeLogin(un, pw);
-///////////////////////////////////
+const bookingPage = document.getElementById("bookingPage");
+const bookButton = document.getElementById("bookButton");
+const dateInput = document.getElementById("dateInput");
+const destInput = document.getElementById("destinationInput");
+const durationInput = document.getElementById("durationInput");
+const loginButton = document.getElementById("loginButton");
+const logOut = document.getElementById("loginPage");
+const passwordInput = document.getElementById("passwordInput")
+const tripsDisplay = document.getElementById("tripsDisplay");
+const tripsPage = document.getElementById("tripsPage");
+const travelersInput = document.getElementById("travelersInput");
+const travelersPage = document.getElementById("travelersPage");
+const userNameInput = document.getElementById("userNameInput");
+// tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
+// tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
+
+tripsDisplay.addEventListener("mouseover", (event) => {
+  if (event.target.classList.contains("trip-container")) {
+    domUpdates.showTripImage(app.user.trips, event)
+  }
+})
+
+tripsDisplay.addEventListener("mouseout", (event) => {
+  if (event.target.classList.contains("trip-container")) {
+    domUpdates.showDefaultImage(app.user.trips, event)
+  }
+})
+
 // index tells api fetch all that data
 // index passes the data on to instantiate an App object
 // index passes app state to dom for display
@@ -31,16 +49,6 @@ fakeLogin(un, pw);
 // first instantiate the app with local data
 // create a fake log in scenario
 // so, pretend data was just fetched, now pass it to the app
-const bookingPage = document.getElementById("bookingPage");
-const bookButton = document.getElementById("bookButton");
-const dateInput = document.getElementById("dateInput");
-const destInput = document.getElementById("destinationInput");
-const durationInput = document.getElementById("durationInput");
-const logOut = document.getElementById("loginPage");
-const tripsDisplay = document.querySelectorAll(".trip-container");
-const tripsPage = document.getElementById("tripsPage");
-const travelersInput = document.getElementById("travelersInput");
-const travelersPage = document.getElementById("travelersPage");
 
 bookingPage.addEventListener("click", () => {
   app.display = "booking";
@@ -51,15 +59,26 @@ bookingPage.addEventListener("click", () => {
   domUpdates.setMinDate(app.date);
 });
 bookButton.addEventListener("click", () => bookTrip(event))
-dateInput.addEventListener('change', () => formCheck());
+dateInput.addEventListener("change", () => formCheck());
 destInput.addEventListener("change", () => domUpdates.showDestinationImage(app.data[2].destinations, event, getValue()));
-destInput.addEventListener('change', () => formCheck());
-durationInput.addEventListener('change', () => formCheck());
+destInput.addEventListener("change", () => formCheck());
+durationInput.addEventListener("change", () => formCheck());
 logOut.addEventListener("click", () => {
   app.display = "login";
   domUpdates.changeView(app.display);
 });
-travelersInput.addEventListener('change', () => formCheck());
+loginButton.addEventListener("click", () => {
+  if (app.login(userNameInput.value, passwordInput.value) === "trips") {
+    domUpdates.populateTrips(app.user.trips);
+    domUpdates.showTotalSpent(app.user);
+    domUpdates.displayName(app.user);
+    domUpdates.changeView(app.display)
+  } else {
+    domUpdates.loginErr()
+  }
+});
+passwordInput.addEventListener("keyup", () => loginCheck());
+travelersInput.addEventListener("change", () => formCheck());
 tripsPage.addEventListener("click", () => {
   app.display = "trips";
   domUpdates.changeView(app.display);
@@ -69,9 +88,25 @@ travelersPage.addEventListener("click", () => {
   app.display = "travelers";
   domUpdates.changeView(app.display);
 });
+userNameInput.addEventListener("keyup", () => loginCheck());
 
-tripsDisplay.forEach(trip => trip.addEventListener("mouseover", () => domUpdates.showTripImage(app.user, event)));
-tripsDisplay.forEach(trip => trip.addEventListener("mouseout", () => domUpdates.showDefaultImage(event)));
+window.onload = fetch();
+
+function fetch() {
+  getData()
+    .then(allData => {
+      app = new App(allData)
+      startUp()
+    })
+}
+
+function startUp() {
+  domUpdates.changeView(app.display)
+}
+function loginCheck() {
+  if (userNameInput.value && passwordInput.value)
+  domUpdates.prepLogin();
+}
 
 const getValue = () => document.getElementById("destinationInput").value;
 
@@ -97,11 +132,15 @@ const bookTrip = (event) => {
     destinationID: Number(destInput.value),
     travelers: Number(travelersInput.value),
     date: dateInput.value.split("-").join("/"),
-    duration: Number(durationInput.value)
+    duration: Number(durationInput.value),
+    status: "pending",
+    suggestedActivities: []
   }
   app.user.bookNewTrip(tripData, app.data[2])
   app.display = "trips";
   domUpdates.populateTrips(app.user.trips)
   domUpdates.changeView(app.display);
   domUpdates.showTotalSpent(app.user);
+  postData(tripData);
+  app.data[1].trips.push(tripData)
 }
