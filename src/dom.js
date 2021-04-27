@@ -103,7 +103,14 @@ const domUpdates = {
     destInput.value = "";
     durationInput.value = "";
     travelersInput.value = "";
-  }
+  },
+
+  displayErr(err) {
+  const userInfo = document.getElementById('userInfo');
+  const message = err.message === 'Failed to fetch' ?
+    'Something went wrong. please check your internet connection' : err.message;
+  userInfo.innerHTML = message;
+}
 }
 
 

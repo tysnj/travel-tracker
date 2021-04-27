@@ -1,24 +1,41 @@
 import dayjs from 'dayjs';
 import './css/base.scss';
 import domUpdates from './dom.js';
+import { getData, postData } from '../src/api.js';
 import travelersData from "../src/data/travelers-sample.js";
 import tripsData from "../src/data/trips-sample.js";
 import destinationsData from "../src/data/destinations-sample.js";
 import App from '../src/app.js';
-const app = new App([travelersData, tripsData, destinationsData]);
+let app; // = new App([travelersData, tripsData, destinationsData]);
 
 ///////////////////////////////////
-let un = "traveler9";
-let pw = "travel2020";
-const fakeLogin = (un, pw) => {
-  app.login(un, pw)
+// let un = "traveler9";
+// let pw = "travel2020";
+// const fakeLogin = (un, pw) => {
+//   app.login(un, pw)
+
+// };
+//
+// fakeLogin(un, pw);
+///////////////////////////////////
+window.onload = fetch();
+
+function fetch() {
+  getData()
+    .then(allData => {
+        app = new App(allData)
+        startUp()
+    })
+}
+
+function startUp() {
+  domUpdates.changeView(app.display)
+}
+function login() {
   domUpdates.populateTrips(app.user.trips)
   domUpdates.showTotalSpent(app.user)
   domUpdates.displayName(app.user)
-};
-
-fakeLogin(un, pw);
-///////////////////////////////////
+}
 // index tells api fetch all that data
 // index passes the data on to instantiate an App object
 // index passes app state to dom for display

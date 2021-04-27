@@ -38,6 +38,7 @@ export default class Traveler {
   }
 
   bookNewTrip(tripInfo, destinations) {
-    this.trips.push(this.previewNewTrip(tripInfo, destinations));
+    this.trips.sort((a, b) => dayjs(b.date) - dayjs(a.date))
+    .unshift(this.previewNewTrip(tripInfo, destinations));
   }
 }
