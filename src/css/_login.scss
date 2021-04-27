@@ -1,0 +1,38 @@
+.logged-out {
+  @include flexin();
+  justify-content: center;
+  position: relative;
+}
+
+.login-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.login-container {
+  @include flexin()
+  justify-content: center;
+  position: absolute;
+  background-color: $accent;
+  background: rgba(255, 251, 119, 0.3);
+  width: 30rem;
+  height: 20rem;
+  border-radius: 7%;
+  font-size: 20pt;
+}
+
+.greeting {
+  position: absolute;
+  margin-top: -100%;
+  font-size: 30pt;
+  text-align: center;
+}
+
+.login-error {
+  display: none;
+  position: absolute;
+  color: $dark;
+  text-shadow: 1px 1px $light;
+  margin-top: 15%;
+}

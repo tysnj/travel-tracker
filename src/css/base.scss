@@ -1,9 +1,11 @@
 @import "reset";
 @import "variables";
 @import "mixins";
+@import "nav";
 @import "login";
 @import "trips";
 @import "booking";
+@import "travelers";
 
 body {
   margin: 0;
@@ -13,263 +15,18 @@ body {
   overflow: hidden;
   font-family: "Open Sans";
   list-style-type: none;
-}
-
-/*~~~~~~~~NAV BARS~~~~~~~~~*/
-.aside {
-  background-color: $medium;
-  color: $dark;
-  display: flex;
-  @include flexin();
-  align-content: flex-start;
-  height: auto;
-  margin-top: 4%;
-  border-right: solid 2px $accent;
-
-  &:hover {
-
-  }
-}
-
-.user-info {
-  border-top: solid 2px $accent;
-  border-bottom: solid 2px $accent;
-  color: $dark;
-  @include flexin();
-  justify-content: center;
-  height: 10em;
-  font-weight: Light;
-  color: $dark;
-  font-size: 15pt;
-  font-weight: bold;
-  width: 20vw;
-  text-align: center;
-}
-
-.aside>h1 {
-  color: $dark;
-  @include flexin();
-  font-size: 15pt;
-  font-weight: bold;
+  @include bold();
 }
 
 
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-left: 3%;
-  margin-top: 1%;
-
-}
-
-.page-links{
-  width: 100%;
-}
-.nav-link {
+.main-section {
   background-color: $dark;
-  color: $accent;
-  width: 85%;
-  margin-top: 6%;
-  margin-left: 6%;
-  padding: 2% 2% 2%;
-  // font-size: 116%;
-  font-weight: bold;
-  border-color: $medium;
-  border: solid 3px $dark;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
+  height: 100vh;
   @include flexin();
 }
 
-
-
-.admin-features {
-  width: 15%;
-  text-align: right;
-}
-
-.user-name-container,
-.login-logout-container {
-  margin-right: 3%;
-}
-
-.login-link {
-  background: none;
-  border: none;
-  margin-left: 30%;
-}
-
-
-
-/*~~~~~~INPUT BOX~~~~~~~~~*/
-
-
-.form {
-  background-color: $dark;
-  height: 40vh;
-  margin-top: 5%;
-  @include flexin();
-  justify-content: center;
-  border-bottom: solid 2px $accent;
-}
-
-.form-label {
-  font-size: 17px;
-  color: $light;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-input {
-  width: 41%;
-  // height: 2em;
-  // border: solid 3px $dark;
-  color: $dark;
-  border-radius: 5px;
-  outline: none;
-  font-size: 15px;
-  box-sizing: border-box;
-}
-
-.book-button {
-  width: 41%;
-  // height: 9em;
-  font-size: 18pt;
-  color: $dark;
-  font-weight: bold;
-  margin-top: 1.5%;
-  // border: solid 3px $medium-light;
-  border-radius: 5px;
-  outline: none;
-  // background-color: $medium-light;
-  cursor: pointer;
-}
-
-#saveButton:disabled {
-  // background-color: $medium-light;
-  cursor: auto;
-}
-
-.search-bar {
-  display: flex;
-  width: 41%;
-  height: 3em;
-  margin-top: 1.5%;
-  margin-bottom: 2%;
-  // border: solid 3px $light;
-  border-radius: 5px;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.search-icon {
-  width: 6%;
-  height: auto;
-  vertical-align: middle;
-  padding-left: 2%;
-  // background-color: $light;
-  padding-right: 3%;
-}
-
-.search {
-  width: 90%;
-  height: 88%;
-  outline: none;
-  font-size: 15px;
-  // color: $light;
-}
-
-.trip-image-section {
-  width: 100%;
-  height: 60vh;
-  margin-top: 5%;
-}
-
-.trip-image {
-  width: 100%;
-  height: 100%;
- }
- .destination-image {
-   height: 52vh;
-   width: 100%;
- }
-
- .destination-name {
-   position: absolute;
-   margin-top: 5px;
-   margin-left: 1%;
-   font-size: 3rem;
-   color: $accent;
-   text-shadow:2px 1px 1px $dark;
- }
-
- .nav {
-   height: 5rem;
-   background-color: $medium;
-   border-bottom: solid 2px $accent;
-   display: flex;
-   flex-flow: row;
-   justify-content: space-between;
-   align-items: flex-end;
-   position: absolute;
-   width: 100%;
-   overflow: hidden;
- }
-
- .main-section {
-   background-color: $dark;
-   height: 100vh;
-   @include flexin();
-   align-content: flex-end;
- }
-
- .trip-image-section {
-   height: 60vh;
- }
-
- .destination-image-section {
-   height: 30vh;
-   width: 100%;
- }
-
- .destination-image-container {
-   width: 100%;
-   height: 30vh;
-
- }
-
- .trip-image-container{
-   height: 60vh;
- }
-
-.trips-display {
-  background-color: #E1E0A4;
-  height: 40vh;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  overflow-y: scroll;
-}
-
-.trip-container {
-  width: 18em;
-  height: 50%;
-  border: 1px $dark;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid $dark;
-  border-radius: 5%;
-  margin-top: 2em;
-}
-
-.page,
-.hidden {
+.hidden,
+.page {
   display: none;
   width: 100vw;
 }
@@ -284,78 +41,19 @@ body {
   opacity: 90%;
 }
 
-
-
 .selected {
   border: solid 2px $accent;
-
-}
-
-.logged-out {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.greeting{
-  position: absolute;
-  margin-top: -100%;
-  font-size: 30pt;
-  text-align: center;
-}
-
-.login-container {
-  display: none;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: $accent;
-  background: rgba(255, 251, 119, 0.3);
-  width: 30rem;
-  height: 20rem;
-  border-radius: 7%;
-  font-size: 20pt;
 }
 
 .displayed {
   display: flex;
-
 }
+
 .active {
   display: flex;
   width: 100vw;
 }
 
-.login-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.login-error {
-  display:none;
-  position: absolute;
-  color: $dark;
-  text-shadow:1px 1px $light;
-  margin-top: 15%;
-}
-
 .err {
-  display:block;
-}
-
-.trip-confirmation {
-  text-align: center;
-  font-size: 1.5rem;
-  width: 50%;
-  font-weight: 800;
-}
-
-.ditch{
-  display:none;
-}
-.show{
-  display:flex;
+  display: block;
 }
