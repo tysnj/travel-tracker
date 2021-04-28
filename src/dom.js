@@ -46,14 +46,18 @@ const domUpdates = {
 
   changeView(display) {
     if (display === "login") {
+      document.querySelector(".logged-in").setAttribute("aria-hidden", "true");
       document.querySelector(".logged-in").classList.remove("active");
       document.querySelector(".logged-out").classList.add("active");
+      document.querySelector(".logged-out").setAttribute("aria-hidden", "false");
       document.querySelector(".login-container").classList.add("displayed");
       document.querySelector(".user-name-input").value = "";
       document.querySelector(".password-input").value = "";
     } else {
       document.querySelector(".logged-out").classList.remove("active");
+      document.querySelector(".logged-out").setAttribute("aria-hidden", "true");
       document.querySelector(".logged-in").classList.add("active");
+      document.querySelector(".logged-in").setAttribute("aria-hidden", "false");
       document.querySelector(".displayed").classList.remove("displayed");
       document.querySelector(".selected").classList.remove("selected");
       document.querySelector(`.${display}`).classList.add("displayed");

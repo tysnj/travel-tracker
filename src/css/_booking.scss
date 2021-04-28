@@ -1,0 +1,275 @@
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  .form {
+    background-color: $dark;
+    height: 45vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 60%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 60%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 55vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 55vh;
+
+      .destination-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  .form {
+    background-color: $dark;
+    height: 45vh;
+    margin-top: 6%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 65%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 65%;
+    height: 2em;
+    font-size: 16pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 55vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 55vh;
+
+      .destination-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  .form {
+    background-color: $dark;
+    height: 45vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 70%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 70%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 55vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 55vh;
+
+      .destination-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  .form {
+    background-color: $dark;
+    height: 50vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 75%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 75%;
+    height: 2em;
+    font-size: 14pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 50vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 50vh;
+
+      .destination-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  .form {
+    background-color: $dark;
+    height: 50vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 80%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 80%;
+    height: 2em;
+    font-size: 13pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 50vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 50vh;
+
+      .destination-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

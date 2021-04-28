@@ -9,22 +9,22 @@
 </head>
 
 <body>
-  <!-- log in page -->
-  <div class="page logged-out active" id="loggedOutPage">
+<!-- pre log in -->
+  <div class="page logged-out active" role="main" id="loggedOutPage" aria-hidden="false">
     <img class="login-image" src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="looking up the aisle of a crowded plane">
     <form class="login-container displayed">
       <h1 class="greeting" id="greeting">WELCOME TO TRAVELTRACKER</h1>
-      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="15" required="required">
-      <label class="user-name-label login-label">User Name</label>
-      <input class="password-input login-input" id="passwordInput" type="password" style="font-size:30px;" maxlength="15" required="required" autocomplete="on">
-      <label class="password-label login-label">Password</label>
+      <input class="user-name-input login-input" id="userNameInput" type="text" style="font-size:30px;" maxlength="15" required="required" aria-required="true">
+      <label for="userNameInput" class="user-name-label login-label">User Name</label>
+      <input class="password-input login-input" id="passwordInput" type="password" style="font-size:30px;" maxlength="15" required="required" autocomplete="on" aria-required="true">
+      <label for="passwordInput" class="password-label login-label">Password</label>
       <button class="login-button" id="loginButton" type="button" disabled>Log In</button>
     </form>
     <h2 class="login-error" id="loginErr">Invalid Credentials!</h2>
   </div>
-  <!-- After log in -->
-  <div class="page logged-in" id="loggedInPage">
-    <!-- top and side nav -->
+<!-- post log in -->
+  <div class="page logged-in" id="loggedInPage" aria-hidden="true">
+<!-- top and side nav -->
     <nav class="nav">
       <div class="logo">
         <h1 class="logo-text">TravelTracker</h1>
@@ -34,7 +34,9 @@
           <h2>User Name</h2>
         </div>
         <div class="login-logout-container">
-          <li class="nav-link login-link" id="loginPage">Log Out</li>
+          <ul>
+            <li class="nav-link login-link" id="loginPage">Log Out</li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -43,16 +45,17 @@
         <p class="greeting-text">Hello User</p>
       </div>
       <div class="page-links">
-        <li class="nav-link trips-link selected" id="tripsPage">Trips</li>
-        <li class="nav-link booking-link" id="bookingPage">Booking</li>
-        <li class="nav-link travelers-link hidden" id="travelersPage">Travelers</li>
+        <ol>
+          <li class="nav-link trips-link selected" id="tripsPage">Trips</li>
+          <li class="nav-link booking-link" id="bookingPage">Booking</li>
+          <li class="nav-link travelers-link hidden" id="travelersPage">Travelers</li>
+        </ul>
       </div>
       <div class="trip-confirmation" id="tripConfirmation">
       </div>
     </aside>
-
-    <!-- trips page -->
-    <div class="trips page">
+<!-- trips page -->
+    <div class="trips page" aria-hidden="true">
       <main class="main-section">
         <section class="trip-image-section">
           <div class="trip-image-container" id="tripImageContainer">
@@ -64,19 +67,18 @@
         </section>
       </main>
     </div>
-
-    <!-- booking page -->
-    <div class="booking page">
+<!-- booking page -->
+    <div class="booking page" aria-hidden="true">
       <main class="main-section">
         <form class="form" id="form">
-          <label class="date-picker-label form-label">Date</label>
-          <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40" required="required">
-          <label class="duration-label form-label">Duration</label>
-          <input class="duration-input form-input" id="durationInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
-          <label class="travelers-label form-label"># of Travelers</label>
-          <input class="travelers-input form-input" id="travelersInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required">
-          <label class="destination-label form-label">Destination</label>
-          <select name="destination" class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40" required="required">
+          <label for="dateInput" class="date-picker-label form-label">Date</label>
+          <input class="date-input form-input" id="dateInput" type="date" style="font-size:30px;" maxlength="40" required="required" aria-required="true">
+          <label for="durationInput" class="duration-label form-label">Duration</label>
+          <input class="duration-input form-input" id="durationInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required" aria-required="true">
+          <label for="travelersInput" class="travelers-label form-label"># of Travelers</label>
+          <input class="travelers-input form-input" id="travelersInput" type="number" min="1" style="font-size:30px;" maxlength="40" required="required" aria-required="true">
+          <label for="destinationInput" class="destination-label form-label">Destination</label>
+          <select class="destination-input form-input" id="destinationInput" type="text" style="font-size:30px;" maxlength="40" required="required" aria-required="true">
             <option value="None" disabled>Choose One!</option>
           </select>
           <button class="book-button" id="bookButton" type="submit" disabled>Book</button>
@@ -88,9 +90,8 @@
         </section>
       </main>
     </div>
-
-    <!-- travelers page -->
-    <div class="travelers page">
+<!-- travelers page -->
+    <div class="travelers page" aria-hidden="true">
       <main class="main-section">
         <section class="search">
           <span class="search-bar">

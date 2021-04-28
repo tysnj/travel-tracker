@@ -1,0 +1,438 @@
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  .aside {
+    background-color: $medium;
+    color: $dark;
+    display: flex;
+    @include flexin();
+    align-content: flex-start;
+    height: auto;
+    margin-top: 4%;
+    border-right: solid 2px $accent;
+
+    .user-info {
+      border-top: solid 2px $accent;
+      border-bottom: solid 2px $accent;
+      color: $dark;
+      @include flexin();
+      justify-content: center;
+      height: 10em;
+      color: $dark;
+      text-align: center;
+    }
+
+    .page-links {
+      width: 100%;
+    }
+  }
+
+  .nav {
+    height: 5rem;
+    background-color: $medium;
+    border-bottom: solid 2px $accent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .trip-confirmation {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .nav-link {
+    background-color: $dark;
+    color: $accent;
+    width: 85%;
+    margin-top: 6%;
+    margin-left: 5%;
+    padding: 2%;
+    border-color: $medium;
+    border: solid 3px $dark;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexin();
+  }
+
+  .admin-features {
+    text-align: right;
+    margin-right: 1%;
+  }
+
+  .login-logout-container,
+  .user-name-container {
+    width: 100%
+  }
+
+  .login-link {
+    background: none;
+    border: none;
+    margin-left: 30%;
+  }
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  .aside {
+    background-color: $medium;
+    color: $dark;
+    display: flex;
+    @include flexin();
+    align-content: flex-start;
+    height: auto;
+    margin-top: 4%;
+    border-right: solid 2px $accent;
+
+    .user-info {
+      border-top: solid 2px $accent;
+      border-bottom: solid 2px $accent;
+      color: $dark;
+      @include flexin();
+      justify-content: center;
+      height: 14em;
+      color: $dark;
+      width: 16vw;
+      text-align: center;
+      font-size: 16pt;
+    }
+
+    .page-links {
+      width: 100%;
+    }
+  }
+
+  .nav {
+    height: 5rem;
+    background-color: $medium;
+    border-bottom: solid 2px $accent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .trip-confirmation {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .nav-link {
+    background-color: $dark;
+    color: $accent;
+    width: 85%;
+    margin-top: 6%;
+    margin-left: 5%;
+    padding: 2%;
+    border-color: $medium;
+    border: solid 3px $dark;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexin();
+  }
+
+  .admin-features {
+    text-align: right;
+    margin-right: 1%;
+  }
+
+  .login-logout-container,
+  .user-name-container {
+    width: 100%
+  }
+
+  .login-link {
+    background: none;
+    border: none;
+    margin-left: 30%;
+  }
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  .aside {
+    background-color: $medium;
+    color: $dark;
+    display: flex;
+    @include flexin();
+    align-content: flex-start;
+    height: auto;
+    margin-top: 4%;
+    border-right: solid 2px $accent;
+
+    .user-info {
+      border-top: solid 2px $accent;
+      border-bottom: solid 2px $accent;
+      color: $dark;
+      @include flexin();
+      justify-content: center;
+      height: 15em;
+      color: $dark;
+      width: 16vw;
+      text-align: center;
+      font-size: 14pt;
+    }
+
+    .page-links {
+      width: 100%;
+    }
+  }
+
+  .nav {
+    height: 5rem;
+    background-color: $medium;
+    border-bottom: solid 2px $accent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .trip-confirmation {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .nav-link {
+    background-color: $dark;
+    color: $accent;
+    width: 85%;
+    margin-top: 6%;
+    margin-left: 5%;
+    padding: 2%;
+    border-color: $medium;
+    border: solid 3px $dark;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexin();
+  }
+
+  .admin-features {
+    text-align: right;
+    margin-right: 3%;
+  }
+
+  .login-logout-container,
+  .user-name-container {
+    width: 100%
+  }
+
+  .login-link {
+    background: none;
+    border: none;
+    margin-left: 30%;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  .aside {
+    background-color: $medium;
+    color: $dark;
+    display: flex;
+    @include flexin();
+    align-content: flex-start;
+    height: auto;
+    margin-top: 4%;
+    border-right: solid 2px $accent;
+
+    .user-info {
+      border-top: solid 2px $accent;
+      border-bottom: solid 2px $accent;
+      color: $dark;
+      @include flexin();
+      justify-content: center;
+      height: 16em;
+      color: $dark;
+      width: 15vw;
+      text-align: center;
+      font-size: 13pt;
+      padding: 12px;
+    }
+
+    .page-links {
+      width: 90%;
+    }
+  }
+
+  .nav {
+    height: 4rem;
+    background-color: $medium;
+    border-bottom: solid 2px $accent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .trip-confirmation {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .nav-link {
+    background-color: $dark;
+    color: $accent;
+    width: 90%;
+    margin-top: 6%;
+    margin-left: 1%;
+    padding: 2%;
+    border-color: $medium;
+    border: solid 3px $dark;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexin();
+    font-size: 13pt;
+  }
+
+  .admin-features {
+    text-align: right;
+    margin-right: 2%;
+    font-size: 13pt;
+  }
+
+  .login-logout-container,
+  .user-name-container {
+    width: 100%
+
+  }
+
+  .login-link {
+    background: none;
+    border: none;
+    margin-left: 30%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-bottom: 3%;
+  }
+}
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  .aside {
+    background-color: $medium;
+    color: $dark;
+    display: flex;
+    @include flexin();
+    align-content: flex-start;
+    height: auto;
+    margin-top: 4%;
+    border-right: solid 2px $accent;
+
+    .user-info {
+      border-top: solid 2px $accent;
+      border-bottom: solid 2px $accent;
+      color: $dark;
+      @include flexin();
+      justify-content: center;
+      height: 10em;
+      color: $dark;
+      width: 15vw;
+      text-align: center;
+      padding: 10px;
+      font-size: 11pt;
+      margin-top: 15px;
+    }
+
+    .page-links {
+      width: 80%;
+    }
+  }
+
+  .nav {
+    height: 4rem;
+    background-color: $medium;
+    border-bottom: solid 2px $accent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    width: 118%;
+    overflow: hidden;
+    font-size: 12pt;
+  }
+
+  .trip-confirmation {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .nav-link {
+    background-color: $dark;
+    color: $accent;
+    width: 90%;
+    margin-top: 6%;
+    margin-left: 5%;
+    padding: 2%;
+    border-color: $medium;
+    border: solid 3px $dark;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexin();
+    font-size: 10pt;
+  }
+
+  .admin-features {
+    text-align: center;
+    margin-right: 3%;
+    font-size: 14pt;
+  }
+
+  .login-logout-container,
+  .user-name-container {
+    width: 100%
+
+  }
+
+  .login-link {
+    background: none;
+    border: none;
+    margin-left: 20%;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}

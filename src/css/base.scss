@@ -1,385 +1,271 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-/* *~~~~color palett~~~~*
-#BDC2BF silver sand
-#E3E7D3 beige
-#989C94 spanish gray
-#25291C pine tree
-#E6E49F green yellow crayola
-#E5E3A0 beige
-*/
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "nav";
+@import "login";
+@import "trips";
+@import "booking";
+@import "travelers";
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-$primary-background: radial-gradient(circle, #E6E49F 10%, #BDC2BF 100%);
-;
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
 
-body {
-  background: $primary-background;
-  margin: 0;
-  font-family: "Open Sans";
-  height: 100vh;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
 
-* {
-  font-family: "Open Sans";
-}
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
 
-li {
-  list-style-type: none;
-}
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
 
-/*~~~~~~~~NAV BARS~~~~~~~~~*/
-.aside {
-  background-color: #989C94;
-  color: #25291C;
-  display: flex;
-  flex-direction: column;
-  // position: absolute;
-  align-content: flex-start;
-  align-items: center;
-  // width: 15%;
-  height: auto;
-  margin-top: 4%;
-  border-right: solid 2px #E6E49F;
+  .selected {
+    border: solid 2px $accent;
+  }
 
-  &:hover {
+  .displayed {
+    display: flex;
+  }
 
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
   }
 }
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.user-info {
-  border-top: solid 2px #E6E49F;
-  border-bottom: solid 2px #E6E49F;
-  display: flex;
-  color: #25291C;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 10em;
-  font-weight: Light;
-  color: #25291C;
-  font-size: 15pt;
-  font-weight: bold;
-  width: 20vw;
-  text-align: center;
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
+
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.aside>h1 {
-  color: #25291C;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 15pt;
-  font-weight: bold;
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
+
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
 
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-left: 3%;
-  margin-top: 1%;
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
 
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  body {
+    margin: 0;
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.page-links{
-  width: 100%;
-}
-.nav-link {
-  background-color: #25291C;
-  color: #E6E49F;
-  width: 85%;
-  margin-top: 6%;
-  margin-left: 6%;
-  padding: 2% 2% 2%;
-  // font-size: 116%;
-  font-weight: bold;
-  border-color: #989C94;
-  border: solid 3px #25291C;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .main-section {
+    background-color: $dark;
+    height: 150vh;
+    @include flexin();
+  }
 
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
 
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
 
-.admin-features {
-  width: 15%;
-  text-align: right;
-}
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
 
-.user-name-container,
-.login-logout-container {
-  margin-right: 3%;
-}
+  .selected {
+    border: solid 2px $accent;
+  }
 
-.login-link {
-  background: none;
-  border: none;
-  margin-left: 30%;
-}
+  .displayed {
+    display: flex;
+  }
 
+  .active {
+    display: flex;
+    width: 100vw;
+  }
 
-
-/*~~~~~~INPUT BOX~~~~~~~~~*/
-
-
-.form {
-  background-color: #25291C;
-  height: 40vh;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-bottom: solid 2px #E6E49F;
-}
-
-.form-label {
-  font-size: 17px;
-  color: #E3E7D3;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-input {
-  width: 41%;
-  // height: 2em;
-  // border: solid 3px #25291C;
-  color: #25291C;
-  border-radius: 5px;
-  outline: none;
-  font-size: 15px;
-  box-sizing: border-box;
-}
-
-.book-button {
-  width: 41%;
-  // height: 9em;
-  font-size: 18pt;
-  color: #25291C;
-  font-weight: bold;
-  margin-top: 1.5%;
-  // border: solid 3px #BDC2BF;
-  border-radius: 5px;
-  outline: none;
-  // background-color: #BDC2BF;
-  cursor: pointer;
-}
-
-#saveButton:disabled {
-  // background-color: #BDC2BF;
-  cursor: auto;
-}
-
-.search-bar {
-  display: flex;
-  width: 41%;
-  height: 3em;
-  margin-top: 1.5%;
-  margin-bottom: 2%;
-  // border: solid 3px #E3E7D3;
-  border-radius: 5px;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.search-icon {
-  width: 6%;
-  height: auto;
-  vertical-align: middle;
-  padding-left: 2%;
-  // background-color: #E3E7D3;
-  padding-right: 3%;
-}
-
-.search {
-  width: 90%;
-  height: 88%;
-  outline: none;
-  font-size: 15px;
-  // color: #E3E7D3;
-}
-
-.trip-image-section {
-  width: 100%;
-  height: 60vh;
-  margin-top: 5%;
-}
-
-.trip-image {
-  width: 100%;
-  height: 100%;
- }
- .destination-image {
-   height: 52vh;
-   width: 100%;
- }
-
- .destination-name {
-   position: absolute;
-   margin-top: 5px;
-   margin-left: 1%;
-   font-size: 3rem;
-   text-shadow:1px 1px #E3E7D3;
- }
-
- .nav {
-   height: 5rem;
-   background-color: #989C94;
-   border-bottom: solid 2px #E6E49F;
-   display: flex;
-   flex-flow: row;
-   justify-content: space-between;
-   align-items: flex-end;
-   position: absolute;
-   width: 100%;
-   overflow: hidden;
- }
-
- .main-section {
-   background-color: #25291C;
-   height: 100vh;
-   // width: 80%;
-   display: flex;
-   flex-direction: column;
-   align-content: flex-end;
-   // margin-top: 5%;
- }
-
- .trip-image-section {
-   height: 60vh;
- }
-
- .destination-image-section {
-   height: 30vh;
-   width: 100%;
- }
-
- .destination-image-container {
-   width: 100%;
-   height: 30vh;
-
- }
-
- .trip-image-container{
-   height: 60vh;
- }
-
-.trips-display {
-  background-color: #E1E0A4;
-  height: 40vh;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  overflow-y: scroll;
-}
-
-.trip-container {
-  width: 18em;
-  height: 50%;
-  border: 1px #25291C;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #25291C;
-  border-radius: 5%;
-  margin-top: 2em;
-}
-
-.page,
-.hidden {
-  display:none;
-  width: 100vw;
-}
-
-.pending {
-  background-color: #BDC2BF;
-  opacity: 90%;
-}
-
-.approved {
-  background-color: #989C94;
-  opacity: 90%;
-}
-
-
-
-.selected {
-  border: solid 2px #E6E49F;
-
-}
-
-.logged-out {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.greeting{
-  position: absolute;
-  margin-top: -100%;
-  font-size: 30pt;
-  text-align: center;
-}
-
-.login-container {
-  display: none;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: #E6E49F;
-  background: rgba(255, 251, 119, 0.3);
-  width: 30rem;
-  height: 20rem;
-  border-radius: 7%;
-  font-size: 20pt;
-}
-
-.displayed {
-  display: flex;
-
-}
-.active {
-  display: flex;
-  width: 100vw;
-}
-
-.login-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.login-error {
-  display:none;
-  position: absolute;
-  color: #25291C;
-  text-shadow:1px 1px #E3E7D3;
-  margin-top: 15%;
-}
-
-.err {
-  display:block;
-}
-
-.trip-confirmation {
-  text-align: center;
-  font-size: 1.5rem;
-  width: 50%;
-  font-weight: 800;
-}
-
-.confirmation-text {
-
+  .err {
+    display: block;
+  }
 }
