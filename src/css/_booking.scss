@@ -2,7 +2,7 @@
 @media screen and (min-width: 1400px) {
   .form {
     background-color: $dark;
-    height: 40vh;
+    height: 45vh;
     margin-top: 5%;
     @include flexin();
     justify-content: center;
@@ -18,7 +18,7 @@
   }
 
   .form-input {
-    width: 41%;
+    width: 60%;
     color: $dark;
     border-radius: 5px;
     outline: none;
@@ -27,7 +27,7 @@
   }
 
   .book-button {
-    width: 41%;
+    width: 60%;
     height: 2em;
     font-size: 18pt;
     color: $dark;
@@ -39,15 +39,15 @@
   }
 
   .destination-image-section {
-    height: 30vh;
+    height: 55vh;
     width: 100%;
 
     .destination-image-container {
       width: 100%;
-      height: 30vh;
+      height: 55vh;
 
       .destination-image {
-        height: 52vh;
+        height: 100%;
         width: 100%;
       }
     }
@@ -57,8 +57,8 @@
 @media screen and (max-width: 1400px) {
   .form {
     background-color: $dark;
-    height: 40vh;
-    margin-top: 5%;
+    height: 45vh;
+    margin-top: 6%;
     @include flexin();
     justify-content: center;
     border-bottom: solid 2px $accent;
@@ -73,7 +73,7 @@
   }
 
   .form-input {
-    width: 41%;
+    width: 65%;
     color: $dark;
     border-radius: 5px;
     outline: none;
@@ -82,9 +82,9 @@
   }
 
   .book-button {
-    width: 41%;
+    width: 65%;
     height: 2em;
-    font-size: 18pt;
+    font-size: 16pt;
     color: $dark;
     font-weight: bold;
     margin-top: 1.5%;
@@ -94,15 +94,15 @@
   }
 
   .destination-image-section {
-    height: 30vh;
+    height: 55vh;
     width: 100%;
 
     .destination-image-container {
       width: 100%;
-      height: 30vh;
+      height: 55vh;
 
       .destination-image {
-        height: 52vh;
+        height: 100%;
         width: 100%;
       }
     }
@@ -112,7 +112,7 @@
 @media screen and (max-width: 1000px) {
   .form {
     background-color: $dark;
-    height: 40vh;
+    height: 45vh;
     margin-top: 5%;
     @include flexin();
     justify-content: center;
@@ -128,16 +128,16 @@
   }
 
   .form-input {
-    width: 41%;
+    width: 70%;
     color: $dark;
     border-radius: 5px;
     outline: none;
-    font-size: 15px;
+    font-size: 14px;
     box-sizing: border-box;
   }
 
   .book-button {
-    width: 41%;
+    width: 70%;
     height: 2em;
     font-size: 18pt;
     color: $dark;
@@ -149,15 +149,15 @@
   }
 
   .destination-image-section {
-    height: 30vh;
+    height: 55vh;
     width: 100%;
 
     .destination-image-container {
       width: 100%;
-      height: 30vh;
+      height: 55vh;
 
       .destination-image {
-        height: 52vh;
+        height: 100%;
         width: 100%;
       }
     }
@@ -167,7 +167,7 @@
 @media screen and (max-width: 800px) {
   .form {
     background-color: $dark;
-    height: 40vh;
+    height: 50vh;
     margin-top: 5%;
     @include flexin();
     justify-content: center;
@@ -183,18 +183,18 @@
   }
 
   .form-input {
-    width: 41%;
+    width: 75%;
     color: $dark;
     border-radius: 5px;
     outline: none;
-    font-size: 15px;
+    font-size: 13px;
     box-sizing: border-box;
   }
 
   .book-button {
-    width: 41%;
+    width: 75%;
     height: 2em;
-    font-size: 18pt;
+    font-size: 14pt;
     color: $dark;
     font-weight: bold;
     margin-top: 1.5%;
@@ -204,15 +204,15 @@
   }
 
   .destination-image-section {
-    height: 30vh;
+    height: 50vh;
     width: 100%;
 
     .destination-image-container {
       width: 100%;
-      height: 30vh;
+      height: 50vh;
 
       .destination-image {
-        height: 52vh;
+        height: 100%;
         width: 100%;
       }
     }
@@ -222,7 +222,7 @@
 @media screen and (max-width: 400px) {
   .form {
     background-color: $dark;
-    height: 40vh;
+    height: 50vh;
     margin-top: 5%;
     @include flexin();
     justify-content: center;
@@ -238,18 +238,18 @@
   }
 
   .form-input {
-    width: 41%;
+    width: 80%;
     color: $dark;
     border-radius: 5px;
     outline: none;
-    font-size: 15px;
+    font-size: 12px;
     box-sizing: border-box;
   }
 
   .book-button {
-    width: 41%;
+    width: 80%;
     height: 2em;
-    font-size: 18pt;
+    font-size: 13pt;
     color: $dark;
     font-weight: bold;
     margin-top: 1.5%;
@@ -259,15 +259,15 @@
   }
 
   .destination-image-section {
-    height: 30vh;
+    height: 50vh;
     width: 100%;
 
     .destination-image-container {
       width: 100%;
-      height: 30vh;
+      height: 50vh;
 
       .destination-image {
-        height: 52vh;
+        height: 100%;
         width: 100%;
       }
     }

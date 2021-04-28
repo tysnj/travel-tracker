@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
 import './css/base.scss';
 import domUpdates from './dom.js';
-import { getData, postData } from '../src/api.js';
-// import travelersData from "../src/data/travelers-sample.js";
-// import tripsData from "../src/data/trips-sample.js";
-// import destinationsData from "../src/data/destinations-sample.js";
+import {
+  getData,
+  postData
+} from '../src/api.js';
 import App from '../src/app.js';
 
-let app; // = new App([travelersData, tripsData, destinationsData]);
+let app;
 
 const bookingPage = document.getElementById("bookingPage");
 const bookButton = document.getElementById("bookButton");
@@ -86,12 +86,12 @@ function fetch() {
     })
 }
 
-function startUp() {
+const startUp = () => {
   domUpdates.changeView(app.display)
 }
-function loginCheck() {
+const loginCheck = () => {
   if (userNameInput.value && passwordInput.value)
-  domUpdates.prepLogin();
+    domUpdates.prepLogin();
 }
 
 const getValue = () => document.getElementById("destinationInput").value;
@@ -131,10 +131,10 @@ const bookTrip = (event) => {
   app.data[1].trips.push(tripData)
 }
 
-function accessibilityTest() {
-    app.login("traveler19", "travel2020")
-    domUpdates.populateTrips(app.user.trips);
-    domUpdates.showTotalSpent(app.user);
-    domUpdates.displayName(app.user);
-    domUpdates.changeView(app.display)
+const accessibilityTest = () => {
+  app.login("traveler19", "travel2020")
+  domUpdates.populateTrips(app.user.trips);
+  domUpdates.showTotalSpent(app.user);
+  domUpdates.displayName(app.user);
+  domUpdates.changeView(app.display)
 }
