@@ -220,7 +220,7 @@
 @media screen and (max-width: 400px) {
   body {
     margin: 0;
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     display: flex;
     position: relative;
@@ -232,7 +232,7 @@
 
   .main-section {
     background-color: $dark;
-    height: 100vh;
+    height: 120vh;
     @include flexin();
   }
 
