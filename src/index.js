@@ -82,7 +82,7 @@ function fetch() {
     .then(allData => {
       app = new App(allData)
       startUp()
-      accessibilityTest()
+      // accessibilityTest() // uncomment if you want skip login page
     })
 }
 
