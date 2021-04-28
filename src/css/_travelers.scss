@@ -1,17 +1,95 @@
-.search-bar {
-  display: flex;
-  width: 41%;
-  height: 3em;
-  margin-top: 1.5%;
-  margin-bottom: 2%;
-  border-radius: 5px;
-  outline: none;
-  box-sizing: border-box;
-}
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  .search-bar {
+    display: flex;
+    width: 41%;
+    height: 3em;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    outline: none;
+    box-sizing: border-box;
+  }
 
-.search {
-  width: 90%;
-  height: 88%;
-  outline: none;
-  font-size: 15px;
+  .search {
+    width: 90%;
+    height: 88%;
+    outline: none;
+    font-size: 15px;
+  }
+}
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  .search-bar {
+    display: flex;
+    width: 41%;
+    height: 3em;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .search {
+    width: 90%;
+    height: 88%;
+    outline: none;
+    font-size: 15px;
+  }
+}
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  .search-bar {
+    display: flex;
+    width: 41%;
+    height: 3em;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .search {
+    width: 90%;
+    height: 88%;
+    outline: none;
+    font-size: 15px;
+  }
+}
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  .search-bar {
+    display: flex;
+    width: 41%;
+    height: 3em;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .search {
+    width: 90%;
+    height: 88%;
+    outline: none;
+    font-size: 15px;
+  }
+}
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  .search-bar {
+    display: flex;
+    width: 41%;
+    height: 3em;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .search {
+    width: 90%;
+    height: 88%;
+    outline: none;
+    font-size: 15px;
+  }
 }

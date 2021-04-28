@@ -6,54 +6,263 @@
 @import "trips";
 @import "booking";
 @import "travelers";
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  font-family: "Open Sans";
-  list-style-type: none;
-  @include bold();
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
+
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
 
-.main-section {
-  background-color: $dark;
-  height: 100vh;
-  @include flexin();
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.hidden,
-.page {
-  display: none;
-  width: 100vw;
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
+
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.pending {
-  background-color: $medium-light;
-  opacity: 90%;
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
+
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
+
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
+
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
+
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-family: "Open Sans";
+    list-style-type: none;
+    @include bold();
+  }
 
-.approved {
-  background-color: $medium;
-  opacity: 90%;
-}
+  .main-section {
+    background-color: $dark;
+    height: 100vh;
+    @include flexin();
+  }
 
-.selected {
-  border: solid 2px $accent;
-}
+  .hidden,
+  .page {
+    display: none;
+    width: 100vw;
+  }
 
-.displayed {
-  display: flex;
-}
+  .pending {
+    background-color: $medium-light;
+    opacity: 90%;
+  }
 
-.active {
-  display: flex;
-  width: 100vw;
-}
+  .approved {
+    background-color: $medium;
+    opacity: 90%;
+  }
 
-.err {
-  display: block;
+  .selected {
+    border: solid 2px $accent;
+  }
+
+  .displayed {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
+    width: 100vw;
+  }
+
+  .err {
+    display: block;
+  }
 }

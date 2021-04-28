@@ -1,48 +1,255 @@
-.trip-image-section {
-  width: 100%;
-  height: 60vh;
-  margin-top: 5%;
-
-  .trip-image-container {
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  .trip-image-section {
+    width: 100%;
     height: 60vh;
+    margin-top: 5%;
 
-    .trip-image {
-      width: 100%;
-      height: 100%;
+    .trip-image-container {
+      height: 60vh;
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .destination-name {
+      position: absolute;
+      margin-top: 26px;
+      margin-left: 1%;
+      font-size: 3rem;
+      color: $accent;
+      text-shadow: 2px 1px 1px $dark;
     }
   }
 
-  .destination-name {
-    position: absolute;
-    margin-top: 5px;
-    margin-left: 1%;
-    font-size: 3rem;
-    color: $accent;
-    text-shadow: 2px 1px 1px $dark;
-  }
-}
-
-.trips-display {
-  background-color: $light;
-  height: 40vh;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  overflow-y: scroll;
-
-  .trip-container {
-    width: 18em;
-    height: 50%;
-    border: 1px $dark;
+  .trips-display {
+    background-color: $light;
+    height: 40vh;
     display: flex;
     flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid $dark;
-    border-radius: 5%;
-    margin-top: 2em;
-    font-size: 15pt;
-    font-weight: lighter;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    .trip-container {
+      width: 18em;
+      height: 50%;
+      border: 1px $dark;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $dark;
+      border-radius: 2%;
+      margin-top: 2em;
+      font-size: 15pt;
+      font-weight: lighter;
+    }
+  }
+}
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  .trip-image-section {
+    width: 100%;
+    height: 60vh;
+    margin-top: 5%;
+
+    .trip-image-container {
+      height: 60vh;
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .destination-name {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 1%;
+      font-size: 2.5rem;
+      color: $accent;
+      text-shadow: 2px 1px 1px $dark;
+    }
+  }
+
+  .trips-display {
+    background-color: $light;
+    height: 40vh;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    .trip-container {
+      width: 18em;
+      height: 50%;
+      border: 1px $dark;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $dark;
+      border-radius: 2%;
+      margin-top: 2em;
+      font-size: 15pt;
+      font-weight: lighter;
+    }
+  }
+}
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  .trip-image-section {
+    width: 100%;
+    height: 60vh;
+    margin-top: 5%;
+
+    .trip-image-container {
+      height: 60vh;
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .destination-name {
+      position: absolute;
+      margin-top: 60px;
+      margin-left: 1%;
+      font-size: 2.4rem;
+      color: $accent;
+      text-shadow: 2px 1px 1px $dark;
+    }
+  }
+
+  .trips-display {
+    background-color: $light;
+    height: 40vh;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    .trip-container {
+      width: 18em;
+      height: 50%;
+      border: 1px $dark;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $dark;
+      border-radius: 2%;
+      margin-top: 2em;
+      font-size: 15pt;
+      font-weight: lighter;
+    }
+  }
+}
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  .trip-image-section {
+    width: 100%;
+    height: 50vh;
+    margin-top: 5%;
+
+    .trip-image-container {
+      height: 50vh;
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .destination-name {
+      position: absolute;
+      margin-top: 70px;
+      margin-left: 1%;
+      font-size: 2.2rem;
+      color: $accent;
+      text-shadow: 2px 1px 1px $dark;
+    }
+  }
+
+  .trips-display {
+    background-color: $light;
+    height: 50vh;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    .trip-container {
+      width: 18em;
+      height: 50%;
+      border: 1px $dark;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $dark;
+      border-radius: 2%;
+      margin-top: 2em;
+      font-size: 15pt;
+      font-weight: lighter;
+    }
+  }
+}
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  .trip-image-section {
+    width: 100%;
+    height: 40vh;
+    margin-top: 5%;
+
+    .trip-image-container {
+      height: 40vh;
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .destination-name {
+      position: absolute;
+      margin-top: 85px;
+      margin-left: 2%;
+      font-size: 1.8rem;
+      color: $accent;
+      text-shadow: 2px 1px 1px $dark;
+    }
+  }
+
+  .trips-display {
+    background-color: $light;
+    height: 60vh;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    .trip-container {
+      width: 18em;
+      height: 50%;
+      border: 1px $dark;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $dark;
+      border-radius: 2%;
+      margin-top: 2em;
+      font-size: 15pt;
+      font-weight: lighter;
+    }
   }
 }

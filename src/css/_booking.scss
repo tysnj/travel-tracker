@@ -1,51 +1,275 @@
-.form {
-  background-color: $dark;
-  height: 40vh;
-  margin-top: 5%;
-  @include flexin();
-  justify-content: center;
-  border-bottom: solid 2px $accent;
-  width: 100%;
-}
-
-.form-label {
-  color: $light;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-input {
-  width: 41%;
-  color: $dark;
-  border-radius: 5px;
-  outline: none;
-  font-size: 15px;
-  box-sizing: border-box;
-}
-
-.book-button {
-  width: 41%;
-  height: 2em;
-  font-size: 18pt;
-  color: $dark;
-  font-weight: bold;
-  margin-top: 1.5%;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.destination-image-section {
-  height: 30vh;
-  width: 100%;
-
-  .destination-image-container {
+//------------ Desktop ----------------
+@media screen and (min-width: 1400px) {
+  .form {
+    background-color: $dark;
+    height: 40vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
     width: 100%;
-    height: 30vh;
+  }
 
-    .destination-image {
-      height: 52vh;
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 41%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 41%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 30vh;
+    width: 100%;
+
+    .destination-image-container {
       width: 100%;
+      height: 30vh;
+
+      .destination-image {
+        height: 52vh;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Laptop ----------------
+@media screen and (max-width: 1400px) {
+  .form {
+    background-color: $dark;
+    height: 40vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 41%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 41%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 30vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 30vh;
+
+      .destination-image {
+        height: 52vh;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Tablet ----------------
+@media screen and (max-width: 1000px) {
+  .form {
+    background-color: $dark;
+    height: 40vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 41%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 41%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 30vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 30vh;
+
+      .destination-image {
+        height: 52vh;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Mobile Large ----------------
+@media screen and (max-width: 800px) {
+  .form {
+    background-color: $dark;
+    height: 40vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 41%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 41%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 30vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 30vh;
+
+      .destination-image {
+        height: 52vh;
+        width: 100%;
+      }
+    }
+  }
+}
+//------------ Mobile Small ----------------
+@media screen and (max-width: 400px) {
+  .form {
+    background-color: $dark;
+    height: 40vh;
+    margin-top: 5%;
+    @include flexin();
+    justify-content: center;
+    border-bottom: solid 2px $accent;
+    width: 100%;
+  }
+
+  .form-label {
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 41%;
+    color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .book-button {
+    width: 41%;
+    height: 2em;
+    font-size: 18pt;
+    color: $dark;
+    font-weight: bold;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .destination-image-section {
+    height: 30vh;
+    width: 100%;
+
+    .destination-image-container {
+      width: 100%;
+      height: 30vh;
+
+      .destination-image {
+        height: 52vh;
+        width: 100%;
+      }
     }
   }
 }
